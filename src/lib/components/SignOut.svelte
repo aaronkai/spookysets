@@ -34,14 +34,3 @@
 {#if message}
 	<p>{message}</p>
 {/if}
-
-<style>
-	button {
-		color: var(--pink);
-		background: none;
-		border: none;
-		font-weight: 700;
-		font-size: 1.2rem;
-		padding: 0;
-	}
-</style>

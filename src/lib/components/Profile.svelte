@@ -1,6 +1,5 @@
 <script>
 	import { supabase } from '$lib/supabaseClient';
-	import { user } from '$lib/stores/sessionStore';
 	import SignOut from './SignOut.svelte';
 	import Avatar from './Avatar.svelte';
 
@@ -26,7 +25,7 @@
 				avatar_url = data.avatar_url;
 			}
 		} catch (error) {
-			alert(error.message);
+			console.error(error.message);
 		} finally {
 			loading = false;
 		}
@@ -51,7 +50,7 @@
 
 			if (error) throw error;
 		} catch (error) {
-			alert(error.message);
+			console.error(error.message);
 		} finally {
 			loading = false;
 		}

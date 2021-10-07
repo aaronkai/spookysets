@@ -24,7 +24,6 @@
 	.wrapper {
 		height: 100%;
 		display: grid;
-		align-items: center;
 		grid-template-rows: auto 1fr auto;
 		row-gap: 1rem;
 	}

@@ -46,7 +46,7 @@
 		{
 			id: uid++,
 			name: 'reverse hyperextension',
-			sets: [true, true, true],
+			sets: [false, false, false],
 		},
 	];
 
@@ -97,52 +97,103 @@
 </script>
 
 <main>
-	<h2>In Progress</h2>
-	<button on:click={addExercise}>Add Exercise</button>
-	{#each exercises.filter((exercise, index) => !exerciseDone(index)) as exercise}
-		<div class="exercise">
-			<input type="text" bind:value={exercise.name} />
-			<button on:click={() => removeSet(exercise.id)}>-</button>
-			{#each exercise.sets as set, setIndex}
-				<button
-					on:click={() => markSetDone(setIndex, exercise.id)}
-					class={set ? 'complete' : 'incomplete'}>{setIndex + 1}</button
-				>
-			{/each}
-			<button on:click={() => addSet(exercise.id)}>+</button>
+	<section>
+		<button on:click={addExercise}>Add Exercise</button>
+		{#each exercises.filter((exercise, index) => !exerciseDone(index)) as exercise}
+			<div class="exercise">
+				<div class="exerciseTitle">
+					<input type="text" bind:value={exercise.name} />
+				</div>
+				<div class="exerciseControls">
+					<button on:click={() => removeSet(exercise.id)}>&minus;</button>
+					{#each exercise.sets as set, setIndex}
+						<button
+							on:click={() => markSetDone(setIndex, exercise.id)}
+							class={set ? 'complete' : 'incomplete'}>{setIndex + 1}</button
+						>
+					{/each}
+					<button on:click={() => addSet(exercise.id)}>&plus;</button>
 
-			<button on:click={() => removeExercise(exercise)}>Remove</button>
-		</div>
-	{/each}
+					<button on:click={() => removeExercise(exercise)}>Remove</button>
+				</div>
+			</div>
+		{/each}
+	</section>
 
-	<h2>Complete</h2>
-	{#each exercises.filter((exercise, index) => exerciseDone(index)) as exercise}
-		<div class="exercise">
-			<input type="text" bind:value={exercise.name} />
-			<button on:click={() => removeSet(exercise.id)}>-</button>
-			{#each exercise.sets as set, setIndex}
-				<button
-					on:click={() => markSetDone(setIndex, exercise.id)}
-					class={set ? 'complete' : 'incomplete'}>{setIndex + 1}</button
-				>
-			{/each}
-			<button on:click={() => addSet(exercise.id)}>+</button>
+	<section>
+		<h2 style={exerciseDone ? 'display: none' : 'display:block'}>Complete</h2>
+		{#each exercises.filter((exercise, index) => exerciseDone(index)) as exercise}
+			<div class="exercise-complete">
+				<div class="exerciseTitle">
+					<input type="text" bind:value={exercise.name} />
+				</div>
+				<div class="exerciseControls">
+					<button on:click={() => removeSet(exercise.id)}>-</button>
+					{#each exercise.sets as set, setIndex}
+						<button
+							on:click={() => markSetDone(setIndex, exercise.id)}
+							class={set ? 'complete' : 'incomplete'}>{setIndex + 1}</button
+						>
+					{/each}
+					<button on:click={() => addSet(exercise.id)}>&plus;</button>
 
-			<button on:click={() => removeExercise(exercise)}>Remove</button>
-		</div>
-	{/each}
+					<button on:click={() => removeExercise(exercise)}>Remove</button>
+				</div>
+			</div>
+		{/each}
+	</section>
 </main>
 
 <style>
 	.complete {
-		background-color: red;
+		background-color: var(--green);
 	}
 	main {
 		display: grid;
+		padding: 1rem;
+		row-gap: 1rem;
+		box-sizing: border-box;
+		width: 100%;
+	}
+
+	section {
+		margin-top: 0 1rem;
+		display: grid;
 		row-gap: 1rem;
 	}
-	.exercise {
-		width: 100vw;
+	.exercise-complete {
+		opacity: 50%;
+	}
+	h2 {
+		font-size: var(--heading-four);
+	}
+
+	.exerciseTitle {
 		display: flex;
+		margin-bottom: 8px;
+	}
+	.exerciseTitle input {
+		background-image: var(--grad-orange-to-pink);
+		-webkit-background-clip: text;
+		background-clip: text;
+		-webkit-text-fill-color: transparent;
+		font-family: bungee, sans-serif;
+		font-size: var(--heading-six);
+		text-transform: capitalize;
+		border: none;
+		width: 300px;
+	}
+	.exerciseControls {
+		display: flex;
+		width: 100%;
+		flex-wrap: wrap;
+	}
+	.exerciseControls button {
+		flex: 1;
+		height: 1.5rem;
+	}
+	button {
+		background-color: var(--foreground);
+		height: 1.5rem;
 	}
 </style>

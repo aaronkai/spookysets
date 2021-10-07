@@ -6,21 +6,46 @@
 }
 
 :root {
-	--off-white: #f8f8f2;
-	--off-black: #282a36;
-	--current-line: #44475a;
-	--cyan: #8be9fd;
-	--green: #50fa7b;
-	--orange: ##ffb86c;
-	--pink: #ff79c6;
-	--purple: #bd93f9;
-	--red: #ff5555;
+	/* Color styles */
+	--black-dark: #14141b;
+	--black-card: #1d1e26;
+	--black-background: #21222c;
+	--black-secondary: #414558;
+	--black: #21222c;
+	--black-ternary: #a7abbe;
+	--selection: #44475a;
+	--comment: #6272a4;
 	--yellow: #f1fa8c;
+	--red: #ff5555;
+	--purple: #bd93f9;
+	--pink: #ff79c6;
+	--orange: #ffb86c;
+	--green: #50fa7b;
+	--cyan: #8be9fd;
+	--foreground: #f8f8f2;
+	--grad-orange-to-pink: linear-gradient(284.12deg, #ff79c6 -6.45%, #ffb86c 107.03%);
+
+	/* Text-size styles */
+	/* base size: paragraph--text (20px) */
+	--heading-one: 3.05rem;
+	--heading-two: 2.45rem;
+	--heading-three: 1.95rem;
+	--heading-four: 1.55rem;
+	--heading-five: 1.25rem;
+	--heading-six: 1rem;
+	--paragraph-small: 0.8rem;
+	--paragraph-xsmall: 0.6rem;
+	--paragraph-text: 1rem;
+	--button-text: 1rem;
+}
+
+html {
+	font-size: 20px;
 }
 
 body,
 #svelte {
-	background-color: var(--off-black);
+	background-color: var(--black-background);
 	height: 100vh;
 }
 
@@ -47,7 +72,7 @@ a,
 li,
 label,
 fieldset {
-	color: var(--off-white);
+	color: var(--foreground);
 }
 
 h1 {
