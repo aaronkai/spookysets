@@ -4,7 +4,7 @@
 
 ## Team Member
 
-Just ole Aaron the lonely coder
+Just ole [Aaron](https://twitter.com/twice_lift).
 
 ## How did I use Supabase
 
