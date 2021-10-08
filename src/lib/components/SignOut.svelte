@@ -29,7 +29,7 @@
 	}
 </script>
 
-<button on:click={signOut} disabled={loading}> Sign Out </button>
+<a on:click={signOut} disabled={loading}> Sign Out </a>
 
 {#if message}
 	<p>{message}</p>
