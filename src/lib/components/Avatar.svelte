@@ -48,37 +48,48 @@
 	}
 </script>
 
-{#if path}
-	<img use:downloadImage {src} alt="Avatar" />
-	<label for="single">
-		{uploading ? 'Uploading ...' : 'Change Image'}
-	</label>
-{:else}
-	<label for="single">
-		{uploading ? 'Uploading ...' : 'Upload Image'}
-	</label>
-{/if}
-<input
-	type="file"
-	id="single"
-	accept="image/*"
-	bind:files
-	on:change={uploadAvatar}
-	disabled={uploading}
-/>
+<section>
+	{#if path}
+		<img use:downloadImage {src} alt="Avatar" />
+		<label for="single">
+			{uploading ? 'Uploading ...' : 'Change Image'}
+		</label>
+	{:else}
+		<label for="single">
+			{uploading ? 'Uploading ...' : 'Upload Image'}
+		</label>
+	{/if}
+	<input
+		type="file"
+		id="single"
+		accept="image/*"
+		bind:files
+		on:change={uploadAvatar}
+		disabled={uploading}
+	/>
+</section>
 
 <style>
+	section {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
 	img {
 		object-fit: cover;
 		width: 150px;
 		height: 150px;
 		border-radius: 100%;
+		margin: 0 auto 1rem;
+	}
+	section label {
+		text-align: center;
 	}
 	input {
 		visibility: hidden;
 	}
 	label {
-		color: var(--pink);
+		color: var(--foreground);
 		background: none;
 		border: none;
 		font-weight: 700;

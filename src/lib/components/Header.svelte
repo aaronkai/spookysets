@@ -1,12 +1,22 @@
 <script>
 	import Nav from './Nav.svelte';
+
+	let isNavOpen = false;
+
+	function toggleNav() {
+		isNavOpen = !isNavOpen;
+		console.log(isNavOpen);
+	}
 </script>
 
 <header>
 	<div>
 		<h1><a href="/">Spoooky sets<img src="/ghost.svg" /></a></h1>
 	</div>
-	<Nav />
+	{#if isNavOpen}
+		<Nav {toggleNav} />
+	{/if}
+	<button on:click={toggleNav}>Menu</button>
 </header>
 
 <style>
@@ -31,6 +41,10 @@
 		animation-duration: 5s;
 		animation-iteration-count: infinite;
 		animation-direction: alternate;
+	}
+
+	button {
+		margin-top: 1rem;
 	}
 
 	@keyframes drift {

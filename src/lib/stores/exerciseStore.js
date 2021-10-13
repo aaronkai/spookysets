@@ -49,4 +49,4 @@ let exercises = writable([
 	},
 ]);
 
-export { uid, exercises };
+export { exercises };

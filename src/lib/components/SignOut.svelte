@@ -34,3 +34,11 @@
 {#if message}
 	<p>{message}</p>
 {/if}
+
+<style>
+	a {
+		text-decoration: none;
+		font-size: var(--heading-three);
+		padding-top: 1rem;
+	}
+</style>

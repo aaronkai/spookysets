@@ -78,32 +78,31 @@
 		value={loading ? 'Loading ...' : 'Update'}
 		disabled={loading}
 	/>
-	<SignOut />
 </form>
 
 <style>
 	header {
-		margin-bottom: 2rem;
 		text-align: center;
 	}
 	header h1 {
-		font-size: 3rem;
 		margin-bottom: 1rem;
+		font-size: var(--heading-two);
+	}
+	header h2 {
+		margin-bottom: 1rem;
+		font-size: var(--heading-five);
 	}
 	form {
-		margin: 1rem;
-		display: grid;
-		justify-items: center;
+		display: flex;
+		flex-direction: column;
 		padding: 2rem;
 		row-gap: 1rem;
 		border: 2px solid var(--current-line);
 	}
 
-	form * {
-		font-size: 1.2rem;
-	}
-
 	label {
+		font-family: bungee;
+
 		display: grid;
 		grid-template-columns: 1fr 3fr;
 		align-items: baseline;
@@ -121,7 +120,8 @@
 		padding: 0.5rem 1rem;
 		margin-top: 1rem;
 		font-weight: 700;
-		color: var(--off-black);
+		color: var(--black-card);
+		font-family: bungee;
 	}
 	.submit:hover {
 		background-color: var(--yellow);

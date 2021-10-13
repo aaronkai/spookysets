@@ -37,8 +37,8 @@
 		display: grid;
 		grid-gap: 1rem;
 		width: 100%;
-		padding-left: 1rem;
 		align-self: center;
+		justify-content: center;
 		/* justify-content: center; */
 	}
 
@@ -51,21 +51,19 @@
 
 	main h2 {
 		font-size: var(--heading-five);
-	}
-
-	.cta {
-		display: flex;
+		text-align: center;
 	}
 
 	a {
+		display: block;
 		background-image: var(--grad-orange-to-pink);
 		color: var(--black-dark);
-		padding: 0.5rem;
+		padding: 1rem;
 		width: 50%;
 		text-align: center;
 		border-radius: 10px;
 		text-decoration: none;
 		font-size: var(--heading-six);
-		margin-right: 1rem;
+		margin: 0 auto;
 	}
 </style>
