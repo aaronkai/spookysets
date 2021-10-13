@@ -12,6 +12,7 @@
 		href="https://fonts.googleapis.com/css2?family=Bungee&family=Roboto&display=swap"
 		rel="stylesheet"
 	/>
+	<title>Spooky Sets</title>
 </svelte:head>
 
 <div class="wrapper">
@@ -26,5 +27,9 @@
 		display: grid;
 		grid-template-rows: auto 1fr auto;
 		row-gap: 1rem;
+		max-width: 400px;
+		margin: 0 auto;
+		border-left: 2px solid var(--black-card);
+		border-right: 2px solid var(--black-card);
 	}
 </style>

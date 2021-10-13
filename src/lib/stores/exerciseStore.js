@@ -1,12 +1,7 @@
-import { persistStore } from './persistentStore';
+import { writable } from 'svelte/store';
 
-// CodeCat peristent svelte store...might not work in svelteKit
-// https://www.youtube.com/watch?v=a65aPLz18IM
-// const defaultData = { username: 'aaron' };
-// export const store = persistStore('data', defaultData);
-
-export let uid = 0;
-let defaultExercises = [
+let uid = 0;
+let exercises = writable([
 	{
 		id: uid++,
 		name: 'pullup',
@@ -52,6 +47,6 @@ let defaultExercises = [
 		name: 'reverse hyperextension',
 		sets: [false, false, false],
 	},
-];
+]);
 
-export let exercises = persistStore('bodyweightRoutine', defaultExercises);
+export { uid, exercises };
