@@ -11,7 +11,7 @@
 
 <header>
 	<div>
-		<h1><a href="/">Spoooky sets<img src="/ghost.svg" /></a></h1>
+		<h1><a href="/">Spoooky sets<img src="/ghost.svg" alt="purple ghost" /></a></h1>
 	</div>
 	{#if isNavOpen}
 		<Nav {toggleNav} />
@@ -52,7 +52,7 @@
 			maring-left: 1rem;
 		}
 		to {
-			margin-left: 6rem;
+			margin-left: 4rem;
 		}
 	}
 </style>

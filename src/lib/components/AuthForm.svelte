@@ -61,7 +61,6 @@
 	{#if signIn}
 		<header>
 			<h1>Sign In</h1>
-			<h2>What's up Ghouls?!</h2>
 		</header>
 	{:else}
 		<header>
@@ -142,7 +141,7 @@
 		background-color: var(--off-black);
 		border-bottom: 2px solid var(--pink);
 		color: var(--off-white);
-		font-size: 1.2rem;
+		font-size: var(--paragraph);
 		width: 100%;
 	}
 	.submit {
@@ -162,12 +161,8 @@
 		color: var(--pink);
 		background: none;
 		border: none;
-		font-weight: 700;
 		font-size: 1.2rem;
 		padding: 0;
 		/* margin-top: 1rem; */
-	}
-	button:hover {
-		color: var(--yellow);
 	}
 </style>

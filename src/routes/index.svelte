@@ -34,10 +34,8 @@
 	main {
 		display: grid;
 		grid-gap: 1rem;
-		width: 100%;
 		align-self: center;
 		justify-content: center;
-		/* justify-content: center; */
 	}
 
 	.highlight {
@@ -63,7 +61,5 @@
 		text-decoration: none;
 		font-size: var(--heading-six);
 		margin: 0 auto;
-	}
-	.cta {
 	}
 </style>

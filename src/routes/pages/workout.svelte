@@ -53,8 +53,6 @@
 		display: grid;
 		padding: 1rem;
 		row-gap: 1rem;
-		box-sizing: border-box;
-		width: 100%;
 	}
 
 	section {
