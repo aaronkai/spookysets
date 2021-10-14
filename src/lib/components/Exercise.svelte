@@ -1,11 +1,13 @@
 <script>
 	import { exercises } from '$lib/stores/exerciseStore';
+	import { alert } from '$lib/stores/alert';
 	export let exercise;
 
 	function removeSet(exerciseId) {
 		let index = $exercises.findIndex((exercise) => exercise.id === exerciseId);
 		$exercises[index].sets.pop();
 		$exercises = $exercises;
+		$alert = { text: 'Set Removed', isActive: true };
 	}
 	function markSetDone(setIndex, exerciseId) {
 		let index = $exercises.findIndex((exercise) => exercise.id === exerciseId);
@@ -19,6 +21,7 @@
 	}
 	function removeExercise(singleExercise) {
 		$exercises = $exercises.filter((exercise) => exercise.id !== singleExercise.id);
+		$alert = { text: 'Exercise Removed', isActive: true };
 	}
 </script>
 

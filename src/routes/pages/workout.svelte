@@ -1,11 +1,14 @@
 <script>
 	import Exercise from '$lib/components/Exercise.svelte';
 	import { exercises } from '$lib/stores/exerciseStore';
+	import Toast from '$lib/components/Toast.svelte';
+	import { alert } from '$lib/stores/alert';
 
 	function addExercise() {
 		let newId = $exercises.at(-1).id + 1 || 0;
 		$exercises.push({ id: newId, name: 'placeholder', sets: [false, false, false] });
 		$exercises = $exercises;
+		$alert = { text: 'Exercise Added to List', isActive: true };
 	}
 
 	function exerciseDone(exerciseIndex) {
@@ -25,6 +28,7 @@
 </svelte:head>
 
 <main>
+	<Toast />
 	<section>
 		<button on:click={addExercise}>Add Exercise</button>
 		{#each $exercises.filter((_, index) => !exerciseDone(index)) as exercise}
