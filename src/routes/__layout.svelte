@@ -27,9 +27,15 @@
 		display: grid;
 		grid-template-rows: auto 1fr auto;
 		row-gap: 1rem;
-		max-width: 375px;
 		margin: 0 auto;
 		border-left: 2px solid var(--black-card);
 		border-right: 2px solid var(--black-card);
+	}
+
+	@media screen and (min-width: 400px) {
+		.wrapper {
+			max-width: 800px;
+			min-height: 100vh;
+		}
 	}
 </style>

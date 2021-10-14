@@ -41,12 +41,13 @@
 
 html {
 	font-size: 20px;
+	height: 1300px;
 }
 
 body,
 #svelte {
 	background-color: var(--black-background);
-	height: 100vh;
+	min-height: 100vh;
 }
 
 h1,
