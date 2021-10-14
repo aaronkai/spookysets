@@ -49,7 +49,7 @@
 
 	@keyframes drift {
 		from {
-			maring-left: 1rem;
+			margin-left: 1rem;
 		}
 		to {
 			margin-left: 4rem;
