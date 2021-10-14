@@ -38,9 +38,10 @@
 		width: 2rem;
 		margin-left: 1rem;
 		animation-name: drift;
-		animation-duration: 5s;
+		animation-duration: 3s;
 		animation-iteration-count: infinite;
 		animation-direction: alternate;
+		animation-timing-function: linear;
 	}
 
 	button {
