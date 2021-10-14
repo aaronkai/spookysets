@@ -26,7 +26,7 @@
 		background-color: var(--black-card);
 		padding: 1rem;
 		width: 100%;
-		border-bottom: 1px solid var(--black-dark);
+		border-bottom: 2px solid var(--pink);
 	}
 
 	a {
@@ -45,7 +45,7 @@
 	}
 
 	button {
-		margin-top: 1rem;
+		margin-top: 2rem;
 	}
 
 	@keyframes drift {

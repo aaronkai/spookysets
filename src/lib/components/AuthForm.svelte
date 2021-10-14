@@ -65,9 +65,7 @@
 	{:else}
 		<header>
 			<h1>Sign Up Now</h1>
-			<div class="subheader">
-				<h2>Start getting pumped!</h2>
-			</div>
+			<div class="subheader" />
 		</header>
 	{/if}
 	<label for="email">Email: </label>
@@ -109,54 +107,6 @@
 </form>
 
 <style>
-	header h1 {
-		text-align: center;
-		margin: 0;
-		display: grid;
-	}
-	header h2 {
-		text-align: center;
-		margin: 0.5rem 0;
-	}
-	.subheader {
-		margin: 2rem 0 2rem 0;
-	}
-
-	form {
-		margin: 1rem;
-		display: grid;
-		padding: 2rem;
-		row-gap: 1rem;
-		border: 2px solid var(--current-line);
-	}
-
-	label {
-		display: grid;
-		grid-template-columns: 1fr 3fr;
-		align-items: baseline;
-		font-size: 1.2rem;
-	}
-	input {
-		border: none;
-		background-color: var(--off-black);
-		border-bottom: 2px solid var(--pink);
-		color: var(--off-white);
-		font-size: var(--paragraph);
-		width: 100%;
-	}
-	.submit {
-		background-color: var(--green);
-		border: none;
-		padding: 0.5rem 1rem;
-		margin-top: 1rem;
-		font-weight: 700;
-		color: var(--off-black);
-		font-size: 1.5rem;
-	}
-	.submit:hover {
-		background-color: var(--yellow);
-	}
-
 	button {
 		color: var(--pink);
 		background: none;
@@ -164,5 +114,44 @@
 		font-size: 1.2rem;
 		padding: 0;
 		/* margin-top: 1rem; */
+	}
+	header {
+		text-align: center;
+	}
+	header h1 {
+		margin-bottom: 1rem;
+		font-size: var(--heading-two);
+	}
+
+	form {
+		display: flex;
+		flex-direction: column;
+		padding: 2rem;
+		row-gap: 1rem;
+		border: 2px solid var(--current-line);
+	}
+
+	label {
+		font-family: bungee;
+
+		display: grid;
+		grid-template-columns: 1fr 3fr;
+		align-items: baseline;
+	}
+	input {
+		border: none;
+		background-color: var(--off-black);
+		border-bottom: 2px solid var(--pink);
+		color: var(--foreground);
+		width: 100%;
+	}
+	.submit {
+		background-color: var(--green);
+		border: none;
+		padding: 0.5rem 1rem;
+		margin: 1rem 0;
+		font-weight: 700;
+		color: var(--black-card);
+		font-family: bungee;
 	}
 </style>

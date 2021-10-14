@@ -1,6 +1,6 @@
 <script>
 	import Exercise from '$lib/components/Exercise.svelte';
-	import { exercises } from '$lib/stores/exerciseStore';
+	import { exercises, title } from '$lib/stores/exerciseStore';
 	import Toast from '$lib/components/Toast.svelte';
 	import { alert } from '$lib/stores/alert';
 
@@ -29,6 +29,7 @@
 
 <main>
 	<Toast />
+	<h2>{$title}</h2>
 	<section>
 		<button on:click={addExercise}>Add Exercise</button>
 		{#each $exercises.filter((_, index) => !exerciseDone(index)) as exercise}
@@ -39,7 +40,6 @@
 	</section>
 
 	<section>
-		<h2 style={exerciseDone ? 'display: none' : 'display:block'}>Complete</h2>
 		{#each $exercises.filter((exercise, index) => exerciseDone(index)) as exercise}
 			<div class="exercise-complete">
 				<Exercise {exercise} />
@@ -64,11 +64,17 @@
 		opacity: 50%;
 	}
 	h2 {
-		font-size: var(--heading-four);
+		font-size: var(--heading-three);
+		background-image: var(--grad-orange-to-pink);
+		-webkit-background-clip: text;
+		background-clip: text;
+		-webkit-text-fill-color: transparent;
+		margin-bottom: 1rem;
 	}
 
 	button {
 		background-color: var(--foreground);
 		height: 1.5rem;
+		border: none;
 	}
 </style>

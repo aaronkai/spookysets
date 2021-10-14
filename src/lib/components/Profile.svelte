@@ -64,14 +64,10 @@
 	</header>
 	<Avatar bind:path={avatar_url} on:upload={updateProfile} />
 
-	<label for="username">
-		Name:
-		<input id="username" type="text" bind:value={username} />
-	</label>
-	<label for="website">
-		Website:
-		<input id="website" type="text" bind:value={website} />
-	</label>
+	<label for="username"> Name: </label>
+	<input id="username" type="text" bind:value={username} />
+	<label for="website"> Website: </label>
+	<input id="website" type="text" bind:value={website} />
 	<input
 		class="submit"
 		type="submit"
@@ -111,7 +107,7 @@
 		border: none;
 		background-color: var(--off-black);
 		border-bottom: 2px solid var(--pink);
-		color: var(--off-white);
+		color: var(--foreground);
 		width: 100%;
 	}
 	.submit {
@@ -122,8 +118,5 @@
 		font-weight: 700;
 		color: var(--black-card);
 		font-family: bungee;
-	}
-	.submit:hover {
-		background-color: var(--yellow);
 	}
 </style>

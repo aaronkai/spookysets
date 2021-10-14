@@ -69,4 +69,7 @@
 	.complete {
 		background-color: var(--green);
 	}
+	button {
+		/* border: none; */
+	}
 </style>
