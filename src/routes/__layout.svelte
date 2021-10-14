@@ -30,12 +30,7 @@
 		margin: 0 auto;
 		border-left: 2px solid var(--black-card);
 		border-right: 2px solid var(--black-card);
-	}
-
-	@media screen and (min-width: 400px) {
-		.wrapper {
-			max-width: 800px;
-			min-height: 100vh;
-		}
+		min-height: 100vh;
+		max-width: 800px;
 	}
 </style>
