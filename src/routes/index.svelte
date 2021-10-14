@@ -22,14 +22,12 @@
 	<h2>Create a <span class="highlight">Workout</span></h2>
 	<h2>List Your <span class="highlight">Exercises</span></h2>
 	<h2>Track Your <span class="highlight">Sets</span></h2>
-	<div class="cta">
-		{#if $user}
-			<a href="/pages/workout">Workout</a>
-		{:else}
-			<a href="/pages/workout">Workout</a>
-			<a href="/pages/signUp">SignUp</a>
-		{/if}
-	</div>
+	{#if $user}
+		<a href="/pages/workout">Workout</a>
+	{:else}
+		<a href="/pages/workout">Workout</a>
+		<a href="/pages/signUp">SignUp</a>
+	{/if}
 </main>
 
 <style>
@@ -65,5 +63,7 @@
 		text-decoration: none;
 		font-size: var(--heading-six);
 		margin: 0 auto;
+	}
+	.cta {
 	}
 </style>
