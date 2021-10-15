@@ -70,6 +70,6 @@
 		background-color: var(--green);
 	}
 	button {
-		/* border: none; */
+		border: 1px solid var(--selection);
 	}
 </style>

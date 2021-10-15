@@ -43,7 +43,7 @@ html {
 	font-size: 20px;
 }
 
-body,
+gobody,
 #svelte {
 	background-color: var(--black-background);
 	min-height: 100vh;

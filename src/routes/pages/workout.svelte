@@ -3,6 +3,7 @@
 	import { exercises, title } from '$lib/stores/exerciseStore';
 	import Toast from '$lib/components/Toast.svelte';
 	import { alert } from '$lib/stores/alert';
+	import { scale } from 'svelte/transition';
 
 	function addExercise() {
 		let newId = $exercises.at(-1).id + 1 || 0;
@@ -33,7 +34,7 @@
 	<section>
 		<button on:click={addExercise}>Add Exercise</button>
 		{#each $exercises.filter((_, index) => !exerciseDone(index)) as exercise}
-			<div class="exercise">
+			<div class="exercise" transition:scale>
 				<Exercise {exercise} />
 			</div>
 		{/each}

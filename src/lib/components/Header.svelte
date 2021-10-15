@@ -51,6 +51,7 @@
 	@keyframes drift {
 		from {
 			margin-left: 1rem;
+			opacity: 0.1;
 		}
 		to {
 			margin-left: 4rem;

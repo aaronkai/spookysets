@@ -32,5 +32,6 @@
 		border-right: 2px solid var(--black-card);
 		min-height: 100vh;
 		max-width: 800px;
+		background-color: var(--black-background);
 	}
 </style>

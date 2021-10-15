@@ -6,6 +6,9 @@
 </script>
 
 <nav transition:fly={{ x: '500' }}>
+	<button on:click={toggleNav} class="close">&times;</button>
+
+	<div on:click={toggleNav} class="background" />
 	<a on:click={toggleNav} href="/">Home</a>
 	<a on:click={toggleNav} href="/pages/workout">Workout</a>
 	{#if !$user}
@@ -32,9 +35,31 @@
 		background-color: var(--black);
 		text-decoration: underline;
 	}
+	.background {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		z-index: -1;
+	}
+
 	a {
 		text-decoration: none;
 		font-size: var(--heading-three);
 		padding-top: 1rem;
+	}
+	.close {
+		--size: 30px;
+		background: var(--purple);
+		color: var(--foreground);
+		width: var(--size);
+		height: var(--size);
+		text-align: center;
+		padding: 0;
+		border-radius: var(--size);
+		position: absolute;
+		top: 1rem;
+		right: 1rem;
+		border: none;
+		font-size: var(--paragraph);
 	}
 </style>
