@@ -1,4 +1,5 @@
 <script>
+	import Box from '$lib/components/Box.svelte';
 	import Modal from '$lib/components/Modal.svelte';
 
 	let isModalOpen = false;
@@ -9,6 +10,8 @@
 </script>
 
 <button on:click={toggleModal}>Summon Modal</button>
+
+<Box />
 
 {#if isModalOpen}
 	<Modal {toggleModal}>
