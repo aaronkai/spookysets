@@ -1,8 +1,20 @@
 <script>
-	import { drag } from '../drag';
+	import { drag } from '$lib/drag';
+	import { fade } from 'svelte/transition';
+
+	let isVisible = true;
+
+	function handleDragStop(e) {
+		console.log(e);
+		if (e.detail.x > 300) {
+			isVisible = false;
+		}
+	}
 </script>
 
-<div class="box" use:drag />
+{#if isVisible}
+	<div class="box" use:drag transition:fade on:dragstop={handleDragStop} />
+{/if}
 
 <style>
 	.box {

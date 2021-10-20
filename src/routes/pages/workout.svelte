@@ -4,6 +4,7 @@
 	import Toast from '$lib/components/Toast.svelte';
 	import { alert } from '$lib/stores/alert';
 	import { scale, fly } from 'svelte/transition';
+	import Timer from '$lib/components/Timer.svelte';
 
 	function addExercise() {
 		let newId = $exercises.at(-1).id + 1 || 0;
@@ -27,6 +28,8 @@
 <svelte:head>
 	<title>Spooky Sets: Workout</title>
 </svelte:head>
+
+<Timer />
 
 <main>
 	<Toast />
