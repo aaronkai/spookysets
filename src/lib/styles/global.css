@@ -54,7 +54,7 @@
 	--line-height-2xl: 2;
 
 	/* rounding and borders */
-	--border-size: 0.1rem;
+	--border-size: 0.15rem;
 	--rounded-none: 0;
 	--rounded-sm: 0.125rem;
 	--rounded: 0.25rem;

@@ -1,5 +1,5 @@
 <footer>
-	<a href="aaronhubbard.dev">Aaron Hubbard</a>
+	<a href="http://www.aaronhubbard.dev">Aaron Hubbard</a>
 	<p>stay spooky y'all</p>
 	<a href="https://hacktoberfest.digitalocean.com">Hacktoberfest2021</a>
 </footer>

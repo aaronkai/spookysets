@@ -1,6 +1,5 @@
-<script>
+<script type="ts">
 	import Nav from './Nav.svelte';
-
 	let isNavOpen = false;
 
 	function toggleNav() {
@@ -11,12 +10,12 @@
 
 <header>
 	<div>
-		<a href="/">Spoooky sets<img src="/ghost.svg" alt="purple ghost" /></a>
+		<a href="/">Spoooky sets</a>
 	</div>
 	{#if isNavOpen}
 		<Nav {toggleNav} />
 	{/if}
-	<button on:click={toggleNav}>Menu</button>
+	<button on:click={toggleNav}><img class="menu" alt="menu-icon" src="/menu.svg" /></button>
 </header>
 
 <style>
@@ -32,9 +31,10 @@
 
 	a {
 		text-decoration: none;
-		font-size: var(--heading-five);
+		font-size: var(--font-xl);
+		color: var(--pink);
 	}
-	img {
+	.ghost {
 		height: 1rem;
 		width: 1rem;
 		margin-left: 1rem;
@@ -44,9 +44,18 @@
 		animation-direction: alternate;
 		animation-timing-function: linear;
 	}
-
+	.menu {
+		height: var(--font-xl);
+		width: var(--font-xl);
+		color: var(--pink);
+		border: 0;
+		margin: 0;
+	}
 	button {
-		height: 1rem;
+		background: none;
+		border: none;
+		padding: 0;
+		margin: 0;
 	}
 
 	@keyframes drift {

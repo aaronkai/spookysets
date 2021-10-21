@@ -26,7 +26,7 @@
 	.wrapper {
 		display: grid;
 		grid-template-rows: auto 1fr auto;
-		row-gap: 1rem;
+		row-gap: var(--spacing-md);
 		margin: 0 auto;
 		background-color: var(--black-background);
 		height: 100%;

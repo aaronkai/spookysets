@@ -11,6 +11,7 @@
 	<div on:click={toggleNav} class="background" />
 	<a on:click={toggleNav} href="/">Home</a>
 	<a on:click={toggleNav} href="/pages/workout">Workout</a>
+	<a on:click={toggleNav} href="/pages/bodyfat">Bodyfat Percentage</a>
 	{#if !$user}
 		<a on:click={toggleNav} href="/pages/signUp">SignUp</a>
 	{:else}
