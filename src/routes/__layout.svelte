@@ -14,24 +14,28 @@
 	/>
 	<title>Spooky Sets</title>
 </svelte:head>
-
 <div class="wrapper">
 	<Header />
-	<slot />
+	<div class="wrapper-inner">
+		<slot />
+	</div>
 	<Footer />
 </div>
 
 <style>
 	.wrapper {
-		height: 100%;
 		display: grid;
 		grid-template-rows: auto 1fr auto;
 		row-gap: 1rem;
 		margin: 0 auto;
-		border-left: 2px solid var(--black-card);
-		border-right: 2px solid var(--black-card);
-		min-height: 100vh;
-		max-width: 800px;
 		background-color: var(--black-background);
+		height: 100%;
+		min-height: 100vh;
+	}
+	.wrapper-inner {
+		justify-self: center;
+		max-width: 800px;
+		display: grid;
+		align-content: center;
 	}
 </style>

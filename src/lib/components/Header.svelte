@@ -11,7 +11,7 @@
 
 <header>
 	<div>
-		<h1><a href="/">Spoooky sets<img src="/ghost.svg" alt="purple ghost" /></a></h1>
+		<a href="/">Spoooky sets<img src="/ghost.svg" alt="purple ghost" /></a>
 	</div>
 	{#if isNavOpen}
 		<Nav {toggleNav} />
@@ -22,20 +22,21 @@
 <style>
 	header {
 		display: flex;
-		flex-direction: column;
+		flex-direction: row;
+		justify-content: space-between;
 		background-color: var(--black-card);
-		padding: 1rem;
+		padding: var(--spacing-xs);
 		width: 100%;
-		border-bottom: 2px solid var(--pink);
+		border-bottom: var(--border-size) solid var(--pink);
 	}
 
 	a {
 		text-decoration: none;
-		font-size: var(--heading-one);
+		font-size: var(--heading-five);
 	}
 	img {
-		height: 2rem;
-		width: 2rem;
+		height: 1rem;
+		width: 1rem;
 		margin-left: 1rem;
 		animation-name: drift;
 		animation-duration: 3s;
@@ -45,7 +46,7 @@
 	}
 
 	button {
-		margin-top: 2rem;
+		height: 1rem;
 	}
 
 	@keyframes drift {

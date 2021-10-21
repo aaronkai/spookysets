@@ -1,17 +1,19 @@
 <footer>
 	<a href="aaronhubbard.dev">Aaron Hubbard</a>
+	<p>stay spooky y'all</p>
 	<a href="https://hacktoberfest.digitalocean.com">Hacktoberfest2021</a>
 </footer>
 
 <style>
 	footer {
 		display: flex;
-		justify-content: space-between;
-		padding: 1rem;
+		justify-content: space-around;
+		padding: var(--spacing-xs);
 		background-color: var(--black-card);
 		border-top: 1px solid var(--black-dark);
 	}
-	footer a {
+	footer a,
+	footer p {
 		font-family: bungee, sans-serif;
 		font-size: var(--paragraph-xsmall);
 		color: var(--foreground);
