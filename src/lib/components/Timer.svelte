@@ -22,25 +22,34 @@
 </script>
 
 <div on:click={handleClick} class={timerRunning ? 'running timer' : 'stopped timer'}>
-	<h1>{seconds}</h1>
+	<h1 class="label">Timer</h1>
+	<p>{seconds}</p>
 </div>
 
 <style>
 	.timer {
 		background-color: var(--green);
-		height: 125px;
-		width: 125px;
-		border-radius: 150px;
+		margin: 0 auto;
+		width: 100%;
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		flex-direction: column;
-		border: 2px solid var(--foreground);
+		border: none;
 	}
-	.timer h1 {
-		color: var(--foreground);
+	.timer p {
+		font-size: var(--font-4xl);
+		color: var(--black-dark);
+		font-family: bungee;
 	}
 	.running {
 		background-color: var(--red);
+	}
+	.timer:hover {
+		opacity: 0.75;
+	}
+	.label {
+		font-size: var(--font-sm);
+		color: var(--black-dark);
 	}
 </style>

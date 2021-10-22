@@ -23,19 +23,24 @@
 			return false;
 		}
 	}
+	function handleSave() {
+		console.log('save');
+	}
 </script>
 
 <svelte:head>
 	<title>Spooky Sets: Workout</title>
 </svelte:head>
 
-<Timer />
-
 <main>
 	<Toast />
 	<h2>{$title}</h2>
 	<section>
-		<button on:click={addExercise}>Add Exercise</button>
+		<div class="controls">
+			<button on:click={addExercise}>&plus;</button>
+			<Timer />
+			<button on:click={handleSave}>Save</button>
+		</div>
 		{#each $exercises.filter((_, index) => !exerciseDone(index)) as exercise (exercise.id)}
 			<div class="exercise" in:scale out:fly={{ x: 400 }}>
 				<Exercise {exercise} />
@@ -64,21 +69,35 @@
 		display: grid;
 		row-gap: 1rem;
 	}
+	.controls {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		justify-content: center;
+	}
 	.exercise-complete {
 		opacity: 50%;
 	}
 	h2 {
 		font-size: var(--heading-three);
-		background-image: var(--grad-orange-to-pink);
-		-webkit-background-clip: text;
-		background-clip: text;
-		-webkit-text-fill-color: transparent;
 		margin-bottom: 1rem;
 	}
 
 	button {
-		background-color: var(--foreground);
-		height: 1.5rem;
-		border: none;
+		margin: 0 auto;
+		background-color: var(--green);
+		height: 100px;
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		border: 10px solid var(--black);
+		font-size: var(--font-2xl);
+		color: var(--black-dark);
+	}
+	button:hover {
+		opacity: 0.75;
+	}
+	@media only screen and (max-width: 450px) {
 	}
 </style>

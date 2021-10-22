@@ -64,12 +64,16 @@
 	}
 	.exerciseControls button {
 		flex: 1;
-		height: 1.5rem;
+		height: 2rem;
 	}
 	.complete {
 		background-color: var(--green);
 	}
 	button {
-		border: 1px solid var(--selection);
+		border: 1px solid var(--blackTernary);
+	}
+	button:hover,
+	input:hover {
+		opacity: 0.75;
 	}
 </style>
