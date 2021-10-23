@@ -37,9 +37,11 @@
 	<h2>{$title}</h2>
 	<section>
 		<div class="controls">
-			<button on:click={addExercise}>&plus;</button>
+			<button on:click={addExercise} title="add exercise">&plus;</button>
 			<Timer />
-			<button on:click={handleSave}>Save</button>
+			<button on:click={handleSave}
+				><img class="icon" src="/save.svg" alt="save icon" title="save" /></button
+			>
 		</div>
 		{#each $exercises.filter((_, index) => !exerciseDone(index)) as exercise (exercise.id)}
 			<div class="exercise" in:scale out:fly={{ x: 400 }}>
@@ -74,6 +76,14 @@
 		grid-template-columns: 1fr 1fr 1fr;
 		justify-content: center;
 	}
+	.controls img {
+		width: 50%;
+		height: 50%;
+		color: var(--black-dark);
+	}
+	/* .icon {
+		height: 25%;
+	} */
 	.exercise-complete {
 		opacity: 50%;
 	}
