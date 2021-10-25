@@ -37,10 +37,10 @@
 	<h2>{$title}</h2>
 	<section>
 		<div class="controls">
-			<button on:click={addExercise} title="add exercise">&plus;</button>
+			<button on:click={addExercise} title="Add Exercise">&plus;</button>
 			<Timer />
-			<button on:click={handleSave}
-				><img class="icon" src="/save.svg" alt="save icon" title="save" /></button
+			<button on:click={handleSave} title="Save"
+				><img class="icon" src="/save.svg" alt="save icon" /></button
 			>
 		</div>
 		{#each $exercises.filter((_, index) => !exerciseDone(index)) as exercise (exercise.id)}

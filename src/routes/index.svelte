@@ -20,10 +20,10 @@
 
 <main>
 	<header>
-		<h1><span class="highlight">Spoooky Sets</span></h1>
-		<h2>Create a <span class="highlight">Workout</span></h2>
-		<h2>List Your <span class="highlight">Exercises</span></h2>
-		<h2>Track Your <span class="highlight">Sets</span></h2>
+		<h1>Spoooky Sets</h1>
+		<h2>Create a <a href="/pages/exercises" class="highlight">Workout</a></h2>
+		<h2>List Your <a href="pages/exercises" class="highlight">Exercises</a></h2>
+		<h2>Track Your <a href="/pages/workout" class="highlight">Sets</a></h2>
 	</header>
 	<div class="cta">
 		{#if $user}
@@ -52,23 +52,26 @@
 		grid-template-columns: 1fr 1fr;
 	}
 	.highlight {
-		background-image: var(--yellow-pink);
+		color: var(--pink);
+		/* background-image: var(--yellow-pink);
 		-webkit-background-clip: text;
 		background-clip: text;
-		-webkit-text-fill-color: transparent;
+		-webkit-text-fill-color: transparent; */
 	}
 	header h1 {
 		font-size: var(--font-5xl);
 		text-align: center;
+		color: var(--pink);
 	}
 	header h2 {
 		font-size: var(--font-2xl);
 		text-align: center;
 	}
 
-	a {
+	.cta a {
 		display: block;
-		background-image: var(--yellow-pink);
+		/* background-image: var(--yellow-pink); */
+		background: var(--green);
 		color: var(--black-dark);
 		padding: 1rem;
 		width: 100%;

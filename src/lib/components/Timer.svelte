@@ -21,10 +21,14 @@
 	}
 </script>
 
-<div on:click={handleClick} class={timerRunning ? 'running timer' : 'stopped timer'}>
+<button
+	title="Start/Stop Timer"
+	on:click={handleClick}
+	class={timerRunning ? 'running timer' : 'stopped timer'}
+>
 	<h1 class="label">Timer</h1>
 	<p>{seconds}</p>
-</div>
+</button>
 
 <style>
 	.timer {

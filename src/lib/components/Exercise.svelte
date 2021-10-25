@@ -29,16 +29,18 @@
 	<input type="text" bind:value={exercise.name} />
 </div>
 <div class="exerciseControls">
-	<button on:click={() => removeSet(exercise.id)}>&minus;</button>
+	<button title="Remove Set" on:click={() => removeSet(exercise.id)}>&minus;</button>
 	{#each exercise.sets as set, setIndex}
 		<button
+			title="Mark Set Done"
 			on:click={() => markSetDone(setIndex, exercise.id)}
 			class={set ? 'complete' : 'incomplete'}>{setIndex + 1}</button
 		>
 	{/each}
-	<button on:click={() => addSet(exercise.id)}>&plus;</button>
+	<button title="Add Set" on:click={() => addSet(exercise.id)}>&plus;</button>
 
-	<button on:click={() => removeExercise(exercise)}>Remove</button>
+	<button title="Remove Exercise from List" on:click={() => removeExercise(exercise)}>Remove</button
+	>
 </div>
 
 <style>
