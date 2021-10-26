@@ -45,18 +45,6 @@
 		display: grid;
 		grid-gap: var(--spacing-md);
 	}
-	.cta {
-		display: grid;
-		grid-gap: var(--spacing-xs);
-		grid-template-columns: 1fr 1fr;
-	}
-	.highlight {
-		color: var(--pink);
-		/* background-image: var(--yellow-pink);
-		-webkit-background-clip: text;
-		background-clip: text;
-		-webkit-text-fill-color: transparent; */
-	}
 	header h1 {
 		font-size: var(--font-5xl);
 		text-align: center;
@@ -67,9 +55,13 @@
 		text-align: center;
 	}
 
+	.cta {
+		display: grid;
+		grid-gap: var(--spacing-xs);
+		grid-template-columns: 1fr 1fr;
+	}
 	.cta a {
 		display: block;
-		/* background-image: var(--yellow-pink); */
 		background: var(--green);
 		color: var(--black-dark);
 		padding: 1rem;
@@ -79,5 +71,8 @@
 		text-decoration: none;
 		font-size: var(--heading-six);
 		margin: 0 auto;
+	}
+	.highlight {
+		color: var(--pink);
 	}
 </style>

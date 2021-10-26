@@ -16,11 +16,9 @@
 				name: 'example 1',
 				exercises: ['pushup', 'situp'],
 			};
-			console.log(inserts);
 			const { data, error } = await supabase.from('workouts').insert(inserts);
-			console.log(data, error);
 		} catch (error) {
-			console.log(error);
+			console.error(error);
 		} finally {
 			loading = false;
 		}
@@ -32,66 +30,74 @@
 			const user = supabase.auth.user();
 			const { data, error } = await supabase.from('workouts').select();
 			allWorkouts = data;
-			console.log({ allWorkouts });
 		} catch (error) {
-			console.log(error);
+			console.error(error);
 		} finally {
 			loading = false;
 		}
 	}
 
 	function setWorkout(workout) {
-		console.log({ workout });
 		$id = workout.id;
 		$title = workout.name;
-		console.log($title);
-		console.log(workout.exercises);
 		$exercises = workout.exercises;
-		console.log($exercises);
+	}
+
+	async function deleteWorkout(workout) {
+		try {
+			loading = true;
+			const user = supabase.auth.user();
+			const { data, error } = await supabase.from('workouts').delete().match({ id: workout.id });
+			getAllWorkouts();
+		} catch (error) {
+			console.error(error);
+		} finally {
+			loading = false;
+		}
 	}
 </script>
 
-<header>
-	<h1>Spooky Sets</h1>
-	<h2>Welcome Back</h2>
-</header>
 <section use:getAllWorkouts>
-	<h2>Your Workouts</h2>
+	<header>
+		<h1>Spooky Sets</h1>
+		<h2>Your Workouts</h2>
+	</header>
 	<table>
 		<tr>
-			<th>Name</th>
-			<th>Edit</th>
-			<th>Delete</th>
+			<th>Workout Name</th>
+			<th>Delete?</th>
+		</tr>
+		<tr>
+			<td> <a class="workoutLink" href="/pages/workout"> Default</a> </td>
+			<td>
+				<p>n/a</p>
+			</td>
 		</tr>
 		{#each allWorkouts as workout}
 			<tr>
 				<td>
-					<a href="/pages/workout" on:click={setWorkout(workout)}>{workout.name}</a>
-				</td>
-				<td>
-					<button type="button" on:click={setWorkout(workout)}>
-						<img class="icon" src="/pencil.svg" alt="pencil icon" title="Edit Workout" />
-					</button>
-				</td>
-				<td>
-					<a href="#"
-						><img class="icon" src="/trash.svg" alt="trashcan icon" title="Delete Workout" /></a
+					<a class="workoutLink" href="/pages/workout" on:click={setWorkout(workout)}
+						>{workout.name}</a
 					>
-				</td></tr
-			>
+				</td>
+
+				<td>
+					<a href="#">
+						<img
+							class="icon"
+							src="/trash.svg"
+							alt="trashcan icon"
+							title="Delete Workout"
+							on:click={deleteWorkout(workout)}
+						/>
+					</a>
+				</td>
+			</tr>
 		{/each}
 	</table>
 </section>
 
 <style>
-	.icon {
-		height: 1rem;
-		width: 1rem;
-	}
-	th {
-		font-family: bungee;
-		color: var(--foreground);
-	}
 	header {
 		display: grid;
 		grid-gap: var(--spacing-md);
@@ -105,11 +111,7 @@
 		font-size: var(--font-2xl);
 		text-align: center;
 	}
-	section h3 {
-		font-size: var(--font-2xl);
-		text-align: center;
-		color: var(--foreground);
-	}
+
 	section {
 		display: grid;
 		grid-gap: var(--spacing-xs);
@@ -118,20 +120,34 @@
 	tr,
 	th,
 	td {
-		border: 1px solid var(--blackSecondary);
-		padding: 1rem 0.25rem;
+		border: 2px solid var(--pink);
+		padding: 1.5rem 0.25rem;
 		text-align: center;
+	}
+	th {
+		color: var(--pink);
+		font-family: bungee;
+		font-size: var(--font-xl);
 	}
 	table {
 		border-collapse: collapse;
 		width: 100%;
 		margin-top: var(--spacing-md);
+		background-color: var(--black-dark);
 	}
 	table tr {
 		width: 100%;
 	}
-	form {
-		display: grid;
-		grid-gap: 1rem;
+
+	p {
+		font-family: bungee;
+		color: var(--foreground);
+	}
+	.icon {
+		height: 1rem;
+		width: 1rem;
+	}
+	.workoutLink {
+		color: var(--green);
 	}
 </style>
