@@ -1,6 +1,7 @@
 import { writable } from 'svelte/store';
 
 let uid = 0;
+let id = writable();
 let title = writable('Bodyweight Routine');
 let exercises = writable([
 	{
@@ -55,4 +56,4 @@ let exercises = writable([
 	},
 ]);
 
-export { exercises, title };
+export { exercises, title, id };

@@ -1,4 +1,5 @@
 <script>
+	import Workout from '$lib/components/Workout.svelte';
 	import { user } from '$lib/stores/sessionStore';
 	import { supabase } from '$lib/supabaseClient';
 
@@ -14,25 +15,23 @@
 	function handleClick() {
 		ctaVisible = !ctaVisible;
 	}
-
-	console.log($user);
 </script>
 
 <main>
-	<header>
-		<h1>Spoooky Sets</h1>
-		<h2>Create a <a href="/pages/exercises" class="highlight">Workout</a></h2>
-		<h2>List Your <a href="pages/exercises" class="highlight">Exercises</a></h2>
-		<h2>Track Your <a href="/pages/workout" class="highlight">Sets</a></h2>
-	</header>
-	<div class="cta">
-		{#if $user}
-			<a href="/pages/workout">Workout</a>
-		{:else}
+	{#if !$user}
+		<header>
+			<h1>Spoooky Sets</h1>
+			<h2>Create a <a href="/pages/exercises" class="highlight">Workout</a></h2>
+			<h2>List Your <a href="pages/exercises" class="highlight">Exercises</a></h2>
+			<h2>Track Your <a href="/pages/workout" class="highlight">Sets</a></h2>
+		</header>
+		<div class="cta">
 			<a href="/pages/workout">Workout</a>
 			<a href="/pages/signUp">SignUp</a>
-		{/if}
-	</div>
+		</div>
+	{:else}
+		<Workout />
+	{/if}
 </main>
 
 <style>

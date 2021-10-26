@@ -2,7 +2,6 @@
 	import { supabase } from '$lib/supabaseClient';
 	import ErrorMessage from './ErrorMessage.svelte';
 	import InfoMessage from './InfoMessage.svelte';
-	import { user } from '$lib/stores/sessionStore';
 
 	let signIn = false;
 	let email;
