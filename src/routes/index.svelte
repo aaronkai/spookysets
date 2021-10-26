@@ -1,5 +1,5 @@
 <script>
-	import Workout from '$lib/components/Workout.svelte';
+	import ChooseWorkout from '$lib/components/ChooseWorkout.svelte';
 	import { user } from '$lib/stores/sessionStore';
 	import { supabase } from '$lib/supabaseClient';
 
@@ -30,7 +30,7 @@
 			<a href="/pages/signUp">SignUp</a>
 		</div>
 	{:else}
-		<Workout />
+		<ChooseWorkout />
 	{/if}
 </main>
 

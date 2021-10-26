@@ -5,6 +5,7 @@
 	import { alert } from '$lib/stores/alert';
 	import { scale, fly } from 'svelte/transition';
 	import Timer from '$lib/components/Timer.svelte';
+	import { user } from '$lib/stores/sessionStore';
 
 	import { supabase } from '$lib/supabaseClient';
 	let loading = false;
@@ -58,12 +59,12 @@
 
 <main>
 	<Toast />
-	<input bind:value={$title} type="text" />
+	<h1 contenteditable="true" bind:innerHTML={$title} type="text" />
 	<section>
 		<div class="controls">
 			<button on:click={addExercise} title="Add Exercise">&plus;</button>
 			<Timer />
-			<button on:click={saveWorkout} title="Save"
+			<button on:click={saveWorkout} title="Save" disabled={$user ? false : true}
 				><img class="icon" src="/save.svg" alt="save icon" /></button
 			>
 		</div>
@@ -84,15 +85,14 @@
 </main>
 
 <style>
-	input {
-		background-image: var(--grad-orange-to-pink);
-		-webkit-background-clip: text;
-		background-clip: text;
-		-webkit-text-fill-color: transparent;
+	h1 {
+		color: var(--purple);
+		background-color: var(--black);
 		font-family: bungee, sans-serif;
 		font-size: var(--font-3xl);
 		text-transform: capitalize;
 		border: none;
+		width: 100%;
 	}
 
 	main {
@@ -116,17 +116,9 @@
 		height: 50%;
 		color: var(--black-dark);
 	}
-	/* .icon {
-		height: 25%;
-	} */
 	.exercise-complete {
 		opacity: 50%;
 	}
-	h2 {
-		font-size: var(--heading-three);
-		margin-bottom: 1rem;
-	}
-
 	button {
 		margin: 0 auto;
 		background-color: var(--green);
@@ -142,6 +134,9 @@
 	}
 	button:hover {
 		opacity: 0.75;
+	}
+	button:disabled {
+		background-color: var(--green-300);
 	}
 	@media only screen and (max-width: 450px) {
 	}

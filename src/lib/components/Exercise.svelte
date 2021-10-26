@@ -49,10 +49,8 @@
 		margin-bottom: 8px;
 	}
 	.exerciseTitle input {
-		background-image: var(--grad-orange-to-pink);
-		-webkit-background-clip: text;
-		background-clip: text;
-		-webkit-text-fill-color: transparent;
+		color: var(--purple);
+		background: none;
 		font-family: bungee, sans-serif;
 		font-size: var(--heading-six);
 		text-transform: capitalize;

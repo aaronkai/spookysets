@@ -1,14 +1,20 @@
 <script>
 	import { supabase } from '$lib/supabaseClient';
 	import ErrorMessage from './ErrorMessage.svelte';
-	import InfoMessage from './InfoMessage.svelte';
+	import Toast from './Toast.svelte';
+	import { alert } from '$lib/stores/alert';
+	import { user } from '$lib/stores/sessionStore';
 
 	let signIn = false;
 	let email;
 	let password;
-	let message;
 	let errorMessage;
 	let loading = false;
+
+	//when there is a change to auth status, update the user store
+	supabase.auth.onAuthStateChange((_, session) => {
+		user.set(session.user);
+	});
 
 	function toggle() {
 		signIn = !signIn;
@@ -25,8 +31,7 @@
 				if (error) {
 					throw error;
 				} else {
-					message = 'Success: You have logged in!';
-					console.log(user);
+					$alert = { text: 'Success: You have logged in!', isActive: true };
 				}
 			} catch (error) {
 				errorMessage = error.error_description || error.message;
@@ -44,7 +49,7 @@
 				if (error) {
 					throw error;
 				} else {
-					message = 'Check your email for a verification link.';
+					$alert = { text: 'Check your email for a verification link.!', isActive: true };
 					signIn = true;
 				}
 			} catch (error) {
@@ -54,56 +59,69 @@
 			}
 		}
 	}
+	console.log($user);
 </script>
 
-<form id="form" on:submit|preventDefault={handleSubmit}>
-	{#if signIn}
-		<header>
-			<h1>Sign In</h1>
-		</header>
-	{:else}
-		<header>
-			<h1>Sign Up Now</h1>
-			<div class="subheader" />
-		</header>
-	{/if}
-	<label for="email">Email: </label>
-	<input id="email" type="email" placeholder="Your email" autocomplete="email" bind:value={email} />
-	<label for="password">Password: </label>
-	<input
-		type="password"
-		placeholder="Your password"
-		autocomplete="current-password"
-		bind:value={password}
-	/>
-	{#if errorMessage}
-		<ErrorMessage error={errorMessage} />
-	{/if}
-	{#if message}
-		<InfoMessage {message} />
-	{/if}
-	{#if signIn}
+<Toast />
+{#if !$user}
+	<form id="form" on:submit|preventDefault={handleSubmit}>
+		{#if signIn}
+			<header>
+				<h1>Sign In</h1>
+			</header>
+		{:else}
+			<header>
+				<h1>Sign Up Now</h1>
+				<div class="subheader" />
+			</header>
+		{/if}
+		<label for="email">Email: </label>
 		<input
-			class="submit"
-			type="submit"
-			value={loading ? 'Loading' : 'Sign In'}
-			disabled={loading}
+			id="email"
+			type="email"
+			placeholder="Your email"
+			autocomplete="email"
+			bind:value={email}
 		/>
-	{:else}
+		<label for="password">Password: </label>
 		<input
-			class="submit"
-			type="submit"
-			value={loading ? 'Loading' : 'Sign Up'}
-			disabled={loading}
+			type="password"
+			placeholder="Your password"
+			autocomplete="current-password"
+			bind:value={password}
 		/>
-	{/if}
+		{#if errorMessage}
+			<ErrorMessage error={errorMessage} />
+		{/if}
 
-	{#if signIn}
-		<button on:click={toggle}>Do you need to sign up?</button>
-	{:else}
-		<button on:click={toggle}>Already have an account?</button>
-	{/if}
-</form>
+		{#if signIn}
+			<input
+				class="submit"
+				type="submit"
+				value={loading ? 'Loading' : 'Sign In'}
+				disabled={loading}
+			/>
+		{:else}
+			<input
+				class="submit"
+				type="submit"
+				value={loading ? 'Loading' : 'Sign Up'}
+				disabled={loading}
+			/>
+		{/if}
+
+		{#if signIn}
+			<button on:click={toggle}>Do you need to sign up?</button>
+		{:else}
+			<button on:click={toggle}>Already have an account?</button>
+		{/if}
+	</form>
+{:else}
+	<div class="signedIn">
+		<h1>You are signed in!</h1>
+		<a href="/">Go pick a workout</a>
+	</div>
+{/if}
 
 <style>
 	button {
@@ -152,5 +170,13 @@
 		font-weight: 700;
 		color: var(--black-card);
 		font-family: bungee;
+	}
+	.signedIn {
+		display: grid;
+		grid-gap: var(--spacing-md);
+	}
+	.signedIn a,
+	.signedIn h1 {
+		color: var(--pink);
 	}
 </style>

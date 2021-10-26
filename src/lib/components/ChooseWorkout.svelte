@@ -60,7 +60,7 @@
 <section use:getAllWorkouts>
 	<header>
 		<h1>Spooky Sets</h1>
-		<h2>Your Workouts</h2>
+		<h2>Choose a Workout:</h2>
 	</header>
 	<table>
 		<tr>
@@ -68,7 +68,7 @@
 			<th>Delete?</th>
 		</tr>
 		<tr>
-			<td> <a class="workoutLink" href="/pages/workout"> Default</a> </td>
+			<td> <a class="workoutLink" href="/pages/workout">Starter Routine</a> </td>
 			<td>
 				<p>n/a</p>
 			</td>
@@ -116,11 +116,20 @@
 		display: grid;
 		grid-gap: var(--spacing-xs);
 	}
-	table,
-	tr,
+	table {
+		border-collapse: separate;
+		width: 100%;
+		margin-top: var(--spacing-md);
+		background-color: var(--black-dark);
+		border: 2px solid var(--pink);
+		border-radius: var(--rounded-md);
+	}
+
 	th,
 	td {
-		border: 2px solid var(--pink);
+		border-top: 2px solid var(--pink);
+		border-left: 2px solid var(--pink);
+
 		padding: 1.5rem 0.25rem;
 		text-align: center;
 	}
@@ -128,15 +137,15 @@
 		color: var(--pink);
 		font-family: bungee;
 		font-size: var(--font-xl);
-	}
-	table {
-		border-collapse: collapse;
-		width: 100%;
-		margin-top: var(--spacing-md);
-		background-color: var(--black-dark);
+		border-top: none;
 	}
 	table tr {
 		width: 100%;
+	}
+
+	td:first-child,
+	th:first-child {
+		border-left: none;
 	}
 
 	p {
