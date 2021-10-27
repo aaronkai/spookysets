@@ -28,7 +28,7 @@
 		</p>
 
 		<p>
-			<a href="pages/SignUp">Sign Up</a> in order to be able to customize and save the default workout.
+			<a href="/pages/signUp">Sign Up</a> in order to be able to customize and save the default workout.
 			You can click the title and the exercise names and change them, add and remove exercies, and add
 			or remove sets. Save it. It'll be there for you on the home page next time you come back.
 		</p>
