@@ -3,8 +3,6 @@
 </script>
 
 <script type="ts">
-	import { scale, fly } from 'svelte/transition';
-
 	let lbs: number;
 	let neck: number;
 	let abdomen: number;
