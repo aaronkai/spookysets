@@ -10,7 +10,7 @@
 
 <header>
 	<div>
-		<a href="/">Spoooky sets</a>
+		<a href="/">Spooky sets</a>
 	</div>
 	{#if isNavOpen}
 		<Nav {toggleNav} />

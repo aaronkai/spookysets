@@ -20,7 +20,8 @@
 <main>
 	{#if !$user}
 		<header>
-			<h1>Spoooky Sets</h1>
+			<img src="/ghost.svg" alt="ghost" />
+			<h1>Spooky Sets</h1>
 			<h2>Create a <a href="/pages/exercises" class="highlight">Workout</a></h2>
 			<h2>List Your <a href="pages/exercises" class="highlight">Exercises</a></h2>
 			<h2>Track Your <a href="/pages/workout" class="highlight">Sets</a></h2>
@@ -54,7 +55,11 @@
 		font-size: var(--font-2xl);
 		text-align: center;
 	}
-
+	img {
+		height: 3rem;
+		width: 3rem;
+		margin: auto;
+	}
 	.cta {
 		display: grid;
 		grid-gap: var(--spacing-xs);
