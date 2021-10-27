@@ -28,9 +28,12 @@
 				name: $title,
 				exercises: $exercises,
 			};
-			console.log(upserts);
 			const { data, error } = await supabase.from('workouts').insert(upserts);
-			console.log(data, error);
+			if (error) {
+				throw error;
+			} else {
+				$alert = { text: 'Workout Saved', isActive: true };
+			}
 		} catch (error) {
 			console.log(error);
 		} finally {
@@ -115,6 +118,7 @@
 		width: 50%;
 		height: 50%;
 		color: var(--black-dark);
+		cursor: pointer;
 	}
 	.exercise-complete {
 		opacity: 50%;
@@ -131,6 +135,7 @@
 		border: 10px solid var(--black);
 		font-size: var(--font-2xl);
 		color: var(--black-dark);
+		cursor: pointer;
 	}
 	button:hover {
 		opacity: 0.75;

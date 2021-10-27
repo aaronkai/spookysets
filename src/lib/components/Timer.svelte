@@ -31,6 +31,9 @@
 </button>
 
 <style>
+	button {
+		cursor: pointer;
+	}
 	.timer {
 		background-color: var(--green);
 		margin: 0 auto;

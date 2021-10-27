@@ -63,5 +63,6 @@
 		right: 1rem;
 		border: none;
 		font-size: var(--paragraph);
+		cursor: pointer;
 	}
 </style>

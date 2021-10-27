@@ -18,5 +18,6 @@
 		font-size: var(--paragraph-xsmall);
 		color: var(--foreground);
 		text-decoration: none;
+		cursor: pointer;
 	}
 </style>

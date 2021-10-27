@@ -29,16 +29,22 @@
 	}
 </script>
 
-<a on:click={signOut} disabled={loading}> Sign Out </a>
+<button type="button" on:click={signOut} disabled={loading}> Sign Out </button>
 
 {#if message}
 	<p>{message}</p>
 {/if}
 
 <style>
-	a {
-		text-decoration: none;
+	button {
+		background: none;
+		border: none;
+		text-align: left;
+		color: var(--foreground);
 		font-size: var(--heading-three);
 		padding-top: 1rem;
+		padding-left: 0;
+		text-decoration: underline;
+		cursor: pointer;
 	}
 </style>

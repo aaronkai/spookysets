@@ -78,13 +78,16 @@
 		{#each allWorkouts as workout}
 			<tr>
 				<td>
-					<a class="workoutLink" href="/pages/workout" on:click={setWorkout(workout)}
-						>{workout.name}</a
+					<a
+						title="Go To Workout"
+						class="workoutLink"
+						href="/pages/workout"
+						on:click={setWorkout(workout)}>{workout.name}</a
 					>
 				</td>
 
 				<td>
-					<a href="#">
+					<button href="#">
 						<img
 							class="icon"
 							src="/trash.svg"
@@ -92,7 +95,7 @@
 							title="Delete Workout"
 							on:click={deleteWorkout(workout)}
 						/>
-					</a>
+					</button>
 				</td>
 			</tr>
 		{/each}
@@ -165,5 +168,12 @@
 		height: 3rem;
 		width: 3rem;
 		margin: auto;
+	}
+	button {
+		background: none;
+		width: 100%;
+		height: 100%;
+		border: none;
+		cursor: pointer;
 	}
 </style>
