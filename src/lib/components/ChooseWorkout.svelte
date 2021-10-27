@@ -62,12 +62,12 @@
 
 	<header>
 		<h1>Spooky Sets</h1>
-		<h2>Choose a Workout:</h2>
 	</header>
 	<table>
+		<caption>Choose a Workout</caption>
 		<tr>
-			<th>Workout Name</th>
-			<th>Delete?</th>
+			<th scope="col">Workout Name</th>
+			<th scope="col">Delete?</th>
 		</tr>
 		<tr>
 			<td> <a class="workoutLink" href="/pages/workout">Starter Routine</a> </td>
@@ -112,8 +112,11 @@
 		text-align: center;
 		color: var(--pink);
 	}
-	header h2 {
+	caption {
 		font-size: var(--font-2xl);
+		font-family: bungee;
+		color: var(--foreground);
+		padding-bottom: 1rem;
 		text-align: center;
 	}
 
