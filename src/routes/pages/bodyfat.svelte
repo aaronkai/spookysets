@@ -1,10 +1,14 @@
+<script context="module">
+	export const prerender = true;
+</script>
+
 <script type="ts">
 	import { scale, fly } from 'svelte/transition';
 
-	let lbs: number = 188;
-	let neck: number = 15;
-	let abdomen: number = 37;
-	let height: number = 74;
+	let lbs: number;
+	let neck: number;
+	let abdomen: number;
+	let height: number;
 	let bodyfatPercentage: number;
 
 	function processForm(lbs: number, neck: number, abdomen: number, height: number): number {

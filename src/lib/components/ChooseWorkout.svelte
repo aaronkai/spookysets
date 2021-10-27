@@ -58,6 +58,8 @@
 </script>
 
 <section use:getAllWorkouts>
+	<img class="ghost" src="/ghost.svg" alt="ghost" />
+
 	<header>
 		<h1>Spooky Sets</h1>
 		<h2>Choose a Workout:</h2>
@@ -158,5 +160,10 @@
 	}
 	.workoutLink {
 		color: var(--green);
+	}
+	.ghost {
+		height: 3rem;
+		width: 3rem;
+		margin: auto;
 	}
 </style>

@@ -12,10 +12,11 @@
 	<a on:click={toggleNav} href="/">Home</a>
 	<a on:click={toggleNav} href="/pages/workout">Workout</a>
 	<a on:click={toggleNav} href="/pages/bodyfat">Bodyfat Percentage</a>
+	<a on:click={toggleNav} href="/pages/about">About</a>
+
 	{#if !$user}
 		<a on:click={toggleNav} href="/pages/signUp">SignUp</a>
 	{:else}
-		<a on:click={toggleNav} href="/pages/profile">Profile</a>
 		<SignOut />
 	{/if}
 </nav>
