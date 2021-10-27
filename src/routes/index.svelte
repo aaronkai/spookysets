@@ -22,8 +22,8 @@
 		<header>
 			<img src="/ghost.svg" alt="ghost" />
 			<h1>Spooky Sets</h1>
-			<h2>Create a <a href="/pages/exercises" class="highlight">Workout</a></h2>
-			<h2>List Your <a href="pages/exercises" class="highlight">Exercises</a></h2>
+			<h2>Create a <a href="/pages/workout" class="highlight">Workout</a></h2>
+			<h2>List Your <a href="pages/workout" class="highlight">Exercises</a></h2>
 			<h2>Track Your <a href="/pages/workout" class="highlight">Sets</a></h2>
 		</header>
 		<div class="cta">
