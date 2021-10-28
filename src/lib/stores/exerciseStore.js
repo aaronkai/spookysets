@@ -36,7 +36,7 @@ let exercises = writable([
 	},
 	{
 		id: uid++,
-		name: 'Ring turn-out pushup',
+		name: 'Pushup progression',
 		sets: [false, false, false],
 	},
 	{

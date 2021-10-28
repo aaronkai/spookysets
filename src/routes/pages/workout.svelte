@@ -73,7 +73,7 @@
 					<img class="icon" src="/save.svg" alt="save icon" />
 				</button>
 			{:else}
-				<button>Log In to Save</button>
+				<a class="control__login" href="/signUp">Log In to Save</a>
 			{/if}
 		</div>
 		<!-- Exercise List -->
@@ -150,5 +150,22 @@
 		background-color: var(--green-300);
 	}
 	@media only screen and (max-width: 450px) {
+	}
+	.control__login {
+		margin: 0 auto;
+		height: 100px;
+		width: 100%;
+		/* background-color: var(--green); */
+		color: var(--purple);
+		font-family: bungee;
+		font-size: var(--font-sm);
+		border: 10px solid var(--black);
+		text-align: center;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		padding: 10px;
+		line-height: 1rem;
 	}
 </style>
