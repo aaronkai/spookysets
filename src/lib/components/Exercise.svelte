@@ -1,27 +1,27 @@
-<script>
+<script type="ts">
 	import { exercises } from '$lib/stores/exerciseStore';
 	import { alert } from '$lib/stores/alert';
 	export let exercise;
 	export let boopTimer;
 
-	function removeSet(exerciseId) {
+	function removeSet(exerciseId): void {
 		let index = $exercises.findIndex((exercise) => exercise.id === exerciseId);
 		$exercises[index].sets.pop();
 		$exercises = $exercises;
 		$alert = { text: 'Set Removed', isActive: true };
 	}
-	function markSetDone(setIndex, exerciseId) {
+	function markSetDone(setIndex, exerciseId): void {
 		let index = $exercises.findIndex((exercise) => exercise.id === exerciseId);
 		$exercises[index].sets[setIndex] = !$exercises[index].sets[setIndex];
 		boopTimer;
 	}
 
-	function addSet(exerciseId) {
+	function addSet(exerciseId): void {
 		let index = $exercises.findIndex((exercise) => exercise.id === exerciseId);
 		$exercises[index].sets.push(false);
 		$exercises = $exercises;
 	}
-	function removeExercise(singleExercise) {
+	function removeExercise(singleExercise): void {
 		$exercises = $exercises.filter((exercise) => exercise.id !== singleExercise.id);
 		$alert = { text: 'Exercise Removed', isActive: true };
 	}

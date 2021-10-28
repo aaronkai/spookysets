@@ -6,10 +6,10 @@
 	import { scale, fly } from 'svelte/transition';
 	import Timer from '$lib/components/Timer.svelte';
 	import { user } from '$lib/stores/sessionStore';
-
 	import { supabase } from '$lib/supabaseClient';
+
 	let loading: boolean = false;
-	let boopTimer: Timer;
+	let boopTimer;
 
 	function addExercise(): void {
 		let newId: number = $exercises.at(-1).id + 1 || 0;
@@ -18,7 +18,7 @@
 		$alert = { text: 'Exercise Added to List', isActive: true };
 	}
 
-	async function saveWorkout(): void {
+	async function saveWorkout(): Promise<void> {
 		try {
 			loading = true;
 			const user = supabase.auth.user();
@@ -43,7 +43,7 @@
 		}
 	}
 
-	function exerciseDone(exerciseIndex) {
+	function exerciseDone(exerciseIndex: number): boolean {
 		if (
 			[...new Set($exercises[exerciseIndex].sets)][0] === true &&
 			[...new Set($exercises[exerciseIndex].sets)].length === 1
@@ -52,9 +52,6 @@
 		} else {
 			return false;
 		}
-	}
-	function handleSave() {
-		console.log('save');
 	}
 </script>
 
@@ -71,9 +68,13 @@
 		<div class="controls">
 			<button on:click={addExercise} title="Add Exercise">&plus;</button>
 			<Timer bind:boopTimer />
-			<button on:click={saveWorkout} title="Save" disabled={$user ? false : true}
-				><img class="icon" src="/save.svg" alt="save icon" /></button
-			>
+			{#if $user}
+				<button on:click={saveWorkout} title="Save" disabled={loading}>
+					<img class="icon" src="/save.svg" alt="save icon" />
+				</button>
+			{:else}
+				<button>Log In to Save</button>
+			{/if}
 		</div>
 		<!-- Exercise List -->
 		{#each $exercises.filter((_, index) => !exerciseDone(index)) as exercise (exercise.id)}
@@ -86,7 +87,7 @@
 	<section>
 		{#each $exercises.filter((exercise, index) => exerciseDone(index)) as exercise}
 			<div class="exercise-complete">
-				<Exercise {exercise} />
+				<Exercise {exercise} {boopTimer} />
 			</div>
 		{/each}
 	</section>

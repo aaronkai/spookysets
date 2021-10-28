@@ -5,7 +5,7 @@
 	let timerRunning: boolean = false;
 	let timer: Timer;
 
-	export function boopTimer(): void {
+	export function boopTimer(): Timer {
 		if (!timerRunning) {
 			seconds = 0;
 			timerRunning = true;
@@ -17,6 +17,7 @@
 			seconds = 0;
 			clearInterval(timer);
 		}
+		return timer;
 	}
 </script>
 
