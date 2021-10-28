@@ -1,4 +1,4 @@
-<script>
+<script type="ts">
 	import Exercise from '$lib/components/Exercise.svelte';
 	import { exercises, title, id } from '$lib/stores/exerciseStore';
 	import Toast from '$lib/components/Toast.svelte';
@@ -8,16 +8,17 @@
 	import { user } from '$lib/stores/sessionStore';
 
 	import { supabase } from '$lib/supabaseClient';
-	let loading = false;
+	let loading: boolean = false;
+	let boopTimer: Timer;
 
-	function addExercise() {
-		let newId = $exercises.at(-1).id + 1 || 0;
+	function addExercise(): void {
+		let newId: number = $exercises.at(-1).id + 1 || 0;
 		$exercises.push({ id: newId, name: 'placeholder', sets: [false, false, false] });
 		$exercises = $exercises;
 		$alert = { text: 'Exercise Added to List', isActive: true };
 	}
 
-	async function saveWorkout() {
+	async function saveWorkout(): void {
 		try {
 			loading = true;
 			const user = supabase.auth.user();
@@ -36,6 +37,7 @@
 			}
 		} catch (error) {
 			console.log(error);
+			$alert = { text: 'Something went wrong!', isActive: true };
 		} finally {
 			loading = false;
 		}
@@ -62,22 +64,25 @@
 
 <main>
 	<Toast />
+	<!-- Workout Title -->
 	<h1 contenteditable="true" bind:innerHTML={$title} type="text" />
+	<!-- Control Panel -->
 	<section>
 		<div class="controls">
 			<button on:click={addExercise} title="Add Exercise">&plus;</button>
-			<Timer />
+			<Timer bind:boopTimer />
 			<button on:click={saveWorkout} title="Save" disabled={$user ? false : true}
 				><img class="icon" src="/save.svg" alt="save icon" /></button
 			>
 		</div>
+		<!-- Exercise List -->
 		{#each $exercises.filter((_, index) => !exerciseDone(index)) as exercise (exercise.id)}
 			<div class="exercise" in:scale out:fly={{ x: 400 }}>
-				<Exercise {exercise} />
+				<Exercise {exercise} {boopTimer} />
 			</div>
 		{/each}
 	</section>
-
+	<!-- Finished Exercise List -->
 	<section>
 		{#each $exercises.filter((exercise, index) => exerciseDone(index)) as exercise}
 			<div class="exercise-complete">

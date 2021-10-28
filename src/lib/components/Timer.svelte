@@ -1,12 +1,11 @@
-<script>
-	import { trusted } from 'svelte/internal';
+<script type="ts">
+	type Timer = ReturnType<typeof setInterval>;
 
-	let seconds = 0;
-	let start = false;
-	let timerRunning = false;
-	let timer;
+	let seconds: number = 0;
+	let timerRunning: boolean = false;
+	let timer: Timer;
 
-	function handleClick() {
+	export function boopTimer(): void {
 		if (!timerRunning) {
 			seconds = 0;
 			timerRunning = true;
@@ -23,7 +22,7 @@
 
 <button
 	title="Start/Stop Timer"
-	on:click={handleClick}
+	on:click={boopTimer}
 	class={timerRunning ? 'running timer' : 'stopped timer'}
 >
 	<h1 class="label">Timer</h1>

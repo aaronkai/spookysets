@@ -2,6 +2,7 @@
 	import { exercises } from '$lib/stores/exerciseStore';
 	import { alert } from '$lib/stores/alert';
 	export let exercise;
+	export let boopTimer;
 
 	function removeSet(exerciseId) {
 		let index = $exercises.findIndex((exercise) => exercise.id === exerciseId);
@@ -12,6 +13,7 @@
 	function markSetDone(setIndex, exerciseId) {
 		let index = $exercises.findIndex((exercise) => exercise.id === exerciseId);
 		$exercises[index].sets[setIndex] = !$exercises[index].sets[setIndex];
+		boopTimer;
 	}
 
 	function addSet(exerciseId) {
@@ -25,15 +27,18 @@
 	}
 </script>
 
+<!-- Exercise Title -->
 <div class="exerciseTitle">
 	<input type="text" bind:value={exercise.name} />
 </div>
+<!-- Exercise Controls: add set, markSetDone, remove set, remove exercise -->
 <div class="exerciseControls">
 	<button title="Remove Set" on:click={() => removeSet(exercise.id)}>&minus;</button>
 	{#each exercise.sets as set, setIndex}
 		<button
 			title="Mark Set Done"
 			on:click={() => markSetDone(setIndex, exercise.id)}
+			on:click={boopTimer}
 			class={set ? 'complete' : 'incomplete'}>{setIndex + 1}</button
 		>
 	{/each}
