@@ -28,5 +28,5 @@
   "description": "A project for hacktoberfest 2021",
   "main": "prettier.config.js",
   "author": "Aaron Hubbard",
-  "license": "ISC"
+  "license": "GPLv3"
 }
