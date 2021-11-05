@@ -38,7 +38,7 @@
 		<button
 			title="Mark Set Done"
 			on:click={() => markSetDone(setIndex, exercise.id)}
-			on:click={boopTimer}
+			on:click={boopTimer(true)}
 			class={set ? 'complete' : 'incomplete'}>{setIndex + 1}</button
 		>
 	{/each}

@@ -5,7 +5,7 @@
 	let timerRunning: boolean = false;
 	let timer: Timer;
 
-	export function boopTimer(): Timer {
+	export function boopTimer(resetTimer: boolean = false): Timer {
 		if (!timerRunning) {
 			seconds = 0;
 			timerRunning = true;
@@ -13,9 +13,18 @@
 				seconds = seconds + 1;
 			}, 1000);
 		} else {
-			timerRunning = false;
-			seconds = 0;
-			clearInterval(timer);
+			// if timer function call comes from a rep button, reset timer, don't stop it.
+			if (resetTimer) {
+				seconds = 0;
+				clearInterval(timer);
+				timer = setInterval(() => {
+					seconds = seconds + 1;
+				}, 1000);
+			} else {
+				timerRunning = false;
+				seconds = 0;
+				clearInterval(timer);
+			}
 		}
 		return timer;
 	}
@@ -23,7 +32,7 @@
 
 <button
 	title="Start/Stop Timer"
-	on:click={boopTimer}
+	on:click={() => boopTimer(false)}
 	class={timerRunning ? 'running timer' : 'stopped timer'}
 >
 	<h1 class="label">Timer</h1>
