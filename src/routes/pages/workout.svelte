@@ -3,7 +3,9 @@
 	import { exercises, title, id } from '$lib/stores/exerciseStore';
 	import Toast from '$lib/components/Toast.svelte';
 	import { alert } from '$lib/stores/alert';
-	import { scale, fly } from 'svelte/transition';
+	import { crossfade, scale, fly } from 'svelte/transition';
+	import { flip } from 'svelte/animate';
+
 	import Timer from '$lib/components/Timer.svelte';
 	import { user } from '$lib/stores/sessionStore';
 	import { supabase } from '$lib/supabaseClient';
@@ -53,6 +55,10 @@
 			return false;
 		}
 	}
+
+	const [send, receive] = crossfade({
+		fallback: fly,
+	});
 </script>
 
 <svelte:head>
@@ -78,15 +84,25 @@
 		</div>
 		<!-- Exercise List -->
 		{#each $exercises.filter((_, index) => !exerciseDone(index)) as exercise (exercise.id)}
-			<div class="exercise" in:scale out:fly={{ x: 400 }}>
+			<div
+				class="exercise"
+				animate:flip
+				in:receive={{ key: exercise.id }}
+				out:send={{ key: exercise.id }}
+			>
 				<Exercise {exercise} {boopTimer} />
 			</div>
 		{/each}
 	</section>
 	<!-- Finished Exercise List -->
 	<section>
-		{#each $exercises.filter((exercise, index) => exerciseDone(index)) as exercise}
-			<div class="exercise-complete">
+		{#each $exercises.filter((exercise, index) => exerciseDone(index)) as exercise (exercise.id)}
+			<div
+				animate:flip
+				in:receive={{ key: exercise.id }}
+				out:send={{ key: exercise.id }}
+				class="exercise-complete"
+			>
 				<Exercise {exercise} {boopTimer} />
 			</div>
 		{/each}
