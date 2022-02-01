@@ -3,6 +3,7 @@
 	import { alert } from '$lib/stores/alert';
 	export let exercise;
 	export let boopTimer;
+	let counter = 0;
 
 	function removeSet(exerciseId): void {
 		let index = $exercises.findIndex((exercise) => exercise.id === exerciseId);
@@ -10,10 +11,15 @@
 		$exercises = $exercises;
 		$alert = { text: 'Set Removed', isActive: true };
 	}
-	function markSetDone(setIndex, exerciseId): void {
+	function toggleSet(set, setIndex, exerciseId): void {
+		if (set) {
+			counter += 1;
+		} else {
+			counter = 0;
+		}
 		let index = $exercises.findIndex((exercise) => exercise.id === exerciseId);
 		$exercises[index].sets[setIndex] = !$exercises[index].sets[setIndex];
-		boopTimer;
+		//boopTimer;
 	}
 
 	function addSet(exerciseId): void {
@@ -25,6 +31,17 @@
 		$exercises = $exercises.filter((exercise) => exercise.id !== singleExercise.id);
 		$alert = { text: 'Exercise Removed', isActive: true };
 	}
+
+	function handleTimer(set) {
+		if (!set) {
+			boopTimer(true);
+		} else {
+			if (counter === 0) {
+				boopTimer();
+			} else {
+			}
+		}
+	}
 </script>
 
 <!-- Exercise Title -->
@@ -35,10 +52,11 @@
 <div class="exerciseControls">
 	<button title="Remove Set" on:click={() => removeSet(exercise.id)}>&minus;</button>
 	{#each exercise.sets as set, setIndex}
+		<!-- Set buttons -->
 		<button
 			title="Mark Set Done"
-			on:click={() => markSetDone(setIndex, exercise.id)}
-			on:click={boopTimer(true)}
+			on:click={() => handleTimer(set)}
+			on:click={() => toggleSet(set, setIndex, exercise.id)}
 			class={set ? 'complete' : 'incomplete'}>{setIndex + 1}</button
 		>
 	{/each}
