@@ -4,12 +4,14 @@
 	import Toast from './Toast.svelte';
 	import { alert } from '$lib/stores/alert';
 	import { user } from '$lib/stores/sessionStore';
+	import { goto } from '$app/navigation';
 
 	let signIn = false;
 	let email;
 	let password;
 	let errorMessage;
 	let loading = false;
+	let isMember = localStorage.getItem('spookysetsMember') ? (signIn = true) : false;
 
 	//when there is a change to auth status, update the user store
 	supabase.auth.onAuthStateChange((_, session) => {
@@ -32,6 +34,8 @@
 					throw error;
 				} else {
 					$alert = { text: 'Success: You have logged in!', isActive: true };
+					localStorage.setItem('spookysetsMember', 'true');
+					goto('/');
 				}
 			} catch (error) {
 				errorMessage = error.error_description || error.message;
@@ -59,7 +63,6 @@
 			}
 		}
 	}
-	console.log($user);
 </script>
 
 <Toast />
@@ -125,7 +128,7 @@
 
 <style>
 	button {
-		color: var(--pink);
+		color: var(--grape-3);
 		background: none;
 		border: none;
 		font-size: 1.2rem;
@@ -137,7 +140,7 @@
 	}
 	header h1 {
 		margin-bottom: 1rem;
-		font-size: var(--heading-two);
+		font-size: var(--font-size-5);
 	}
 
 	form {
@@ -145,7 +148,7 @@
 		flex-direction: column;
 		padding: 2rem;
 		row-gap: 1rem;
-		border: 2px solid var(--current-line);
+		border: 2px solid var(violet-3);
 	}
 
 	label {
@@ -157,26 +160,26 @@
 	}
 	input {
 		border: none;
-		background-color: var(--off-black);
-		border-bottom: 2px solid var(--pink);
+		background-color: var(--gray-8);
+		border-bottom: 2px solid var(--grape-3);
 		color: var(--foreground);
 		width: 100%;
 	}
 	.submit {
-		background-color: var(--green);
+		background-color: var(--green-3);
 		border: none;
 		padding: 0.5rem 1rem;
 		margin: 1rem 0;
 		font-weight: 700;
-		color: var(--black-card);
+		color: var(--gray-9);
 		font-family: bungee;
 	}
 	.signedIn {
 		display: grid;
-		grid-gap: var(--spacing-md);
+		grid-gap: var(--size-3);
 	}
 	.signedIn a,
 	.signedIn h1 {
-		color: var(--pink);
+		color: var(--grape-3);
 	}
 </style>

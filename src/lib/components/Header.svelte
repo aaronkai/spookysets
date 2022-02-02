@@ -4,7 +4,6 @@
 
 	function toggleNav() {
 		isNavOpen = !isNavOpen;
-		console.log(isNavOpen);
 	}
 </script>
 
@@ -24,27 +23,28 @@
 		flex-direction: row;
 		justify-content: space-between;
 		align-items: center;
-		background-color: var(--black-card);
-		padding: var(--spacing-xs);
+		background-color: var(--gray-8);
+		padding: var(--size-2);
 		width: 100%;
-		border-bottom: var(--border-size) solid var(--pink);
+		border-bottom: var(--border-size-1) solid var(--grape-3);
 	}
 
 	a {
 		text-decoration: none;
-		font-size: var(--font-xl);
-		color: var(--pink);
+		font-size: var(--font-size-4);
+		color: var(--grape-3);
 	}
 
 	.menu {
-		height: var(--font-xl);
-		width: var(--font-xl);
-		color: var(--pink);
+		height: var(--font-size-4);
+		width: var(--font-size-4);
+		color: var(--green-3);
 		border: 0;
 		margin: 0;
 		width: 100%;
 		height: 100%;
 	}
+
 	button {
 		background: none;
 		border: none;

@@ -75,8 +75,9 @@
 			<button on:click={addExercise} title="Add Exercise">&plus;</button>
 			<Timer bind:boopTimer />
 			{#if $user}
-				<button on:click={saveWorkout} title="Save" disabled={loading}>
+				<button on:click={saveWorkout} title="Save" class="save" disabled={loading}>
 					<img class="icon" src="/save.svg" alt="save icon" />
+					Save
 				</button>
 			{:else}
 				<a class="control__login" href="/signUp">Log In to Save</a>
@@ -111,10 +112,10 @@
 
 <style>
 	h1 {
-		color: var(--purple);
-		background-color: var(--black);
+		color: var(--violet-3);
+		background-color: var(--gray-9);
 		font-family: bungee, sans-serif;
-		font-size: var(--font-3xl);
+		font-size: var(--font-size-5);
 		text-transform: capitalize;
 		border: none;
 		width: 100%;
@@ -122,14 +123,14 @@
 
 	main {
 		display: grid;
-		padding: 1rem;
-		row-gap: 1rem;
+		padding: var(--size-3);
+		row-gap: var(--size-3);
 	}
 
 	section {
-		margin-top: 0 1rem;
+		margin-top: 0 var(--size-3);
 		display: grid;
-		row-gap: 1rem;
+		row-gap: var(--size-3);
 	}
 	.controls {
 		display: grid;
@@ -139,31 +140,34 @@
 	.controls img {
 		width: 50%;
 		height: 50%;
-		color: var(--black-dark);
+		color: var(--gray-9);
 		cursor: pointer;
+	}
+	.save {
+		font-size: var(--font-size-1);
 	}
 	.exercise-complete {
 		opacity: 50%;
 	}
 	button {
 		margin: 0 auto;
-		background-color: var(--green);
+		background-color: var(--green-3);
 		height: 100px;
 		width: 100%;
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		flex-direction: column;
-		border: 10px solid var(--black);
-		font-size: var(--font-2xl);
-		color: var(--black-dark);
+		border: 10px solid var(--gray-9);
+		font-size: var(--font-size-5);
+		color: var(--gray-9);
 		cursor: pointer;
 	}
 	button:hover {
 		opacity: 0.75;
 	}
 	button:disabled {
-		background-color: var(--green-300);
+		background-color: var(--green-3);
 	}
 	@media only screen and (max-width: 450px) {
 	}
@@ -172,10 +176,10 @@
 		height: 100px;
 		width: 100%;
 		/* background-color: var(--green); */
-		color: var(--purple);
+		color: var(--violet-3);
 		font-family: bungee;
-		font-size: var(--font-sm);
-		border: 10px solid var(--black);
+		font-size: var(--font-size-3);
+		border: 10px solid var(--gray-9);
 		text-align: center;
 		display: flex;
 		justify-content: center;

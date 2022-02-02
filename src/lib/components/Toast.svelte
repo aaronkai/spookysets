@@ -11,7 +11,7 @@
 
 	alert.subscribe((value) => {
 		if (value.isActive) {
-			setTimeout(closeAlert, 1000);
+			setTimeout(closeAlert, 2000);
 		}
 	});
 </script>
@@ -24,7 +24,7 @@
 
 <style>
 	aside {
-		background-color: var(--green);
+		background-color: var(--green-3);
 		position: fixed;
 		bottom: 20px;
 		left: 0px;
@@ -32,7 +32,7 @@
 		padding: 1rem;
 	}
 	aside p {
-		color: var(--black);
+		color: var(--gray-9);
 		font-family: bungee;
 		text-align: center;
 		margin: 0;

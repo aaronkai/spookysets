@@ -1,6 +1,7 @@
 <script>
 	import { supabase } from '$lib/supabaseClient';
 	import { user } from '$lib/stores/sessionStore';
+	import { goto } from '$app/navigation';
 
 	export let ctaVisible;
 
@@ -15,15 +16,15 @@
 				throw error;
 			} else {
 				message = 'You have signed out';
+				goto('/');
 			}
 		} catch (error) {
 			// looks like there's a bug in Supabase here that throws an error on signout, but it can be ignored
 			message = `You have signed out`;
-			console.warning(error);
+			console.warn(error);
 		} finally {
 			loading = false;
 			user.set(null);
-			console.log($user);
 			ctaVisible = true;
 		}
 	}
@@ -40,9 +41,9 @@
 		background: none;
 		border: none;
 		text-align: left;
-		color: var(--foreground);
-		font-size: var(--heading-three);
-		padding-top: 1rem;
+		color: var(--violet-3);
+		font-size: var(--font-size-4);
+		padding-top: var(--size-4);
 		padding-left: 0;
 		text-decoration: underline;
 		cursor: pointer;

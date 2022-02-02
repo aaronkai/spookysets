@@ -6,6 +6,6 @@
 
 <style>
 	p {
-		color: var(--red);
+		color: var(--red-5);
 	}
 </style>

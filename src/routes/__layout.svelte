@@ -26,9 +26,9 @@
 	.wrapper {
 		display: grid;
 		grid-template-rows: auto 1fr auto;
-		row-gap: var(--spacing-md);
+		row-gap: var(--size-2);
 		margin: 0 auto;
-		background-color: var(--black-background);
+		background-color: var(--gray-9);
 		height: 100%;
 		min-height: 100vh;
 	}

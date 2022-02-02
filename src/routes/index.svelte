@@ -2,7 +2,6 @@
 	import ChooseWorkout from '$lib/components/ChooseWorkout.svelte';
 	import { user } from '$lib/stores/sessionStore';
 	import { supabase } from '$lib/supabaseClient';
-
 	let ctaVisible = true;
 	//instantiate user store
 	user.set(supabase.auth.user());
@@ -27,8 +26,8 @@
 			<h2>Track Your <a href="/pages/workout" class="highlight">Sets</a></h2>
 		</header>
 		<div class="cta">
-			<a href="/pages/workout">Workout</a>
-			<a href="/pages/signUp">SignUp</a>
+			<a href="/pages/workout">Workout Now!</a>
+			<a href="/pages/signUp">Log In</a>
 		</div>
 	{:else}
 		<ChooseWorkout />
@@ -38,21 +37,21 @@
 <style>
 	main {
 		display: grid;
-		grid-gap: var(--spacing-lg);
+		grid-gap: var(--size-5);
 		align-self: center;
 		justify-content: center;
 	}
 	header {
 		display: grid;
-		grid-gap: var(--spacing-md);
+		grid-gap: var(--size-5);
 	}
 	header h1 {
-		font-size: var(--font-5xl);
+		font-size: var(--font-size-5);
 		text-align: center;
-		color: var(--pink);
+		color: var(--grape-3);
 	}
 	header h2 {
-		font-size: var(--font-2xl);
+		font-size: var(--font-size-4);
 		text-align: center;
 	}
 	img {
@@ -62,22 +61,22 @@
 	}
 	.cta {
 		display: grid;
-		grid-gap: var(--spacing-xs);
+		grid-gap: var(--size-2);
 		grid-template-columns: 1fr 1fr;
 	}
 	.cta a {
 		display: block;
-		background: var(--green);
-		color: var(--black-dark);
+		background: var(--green-4);
+		color: var(--gray-9);
 		padding: 1rem;
 		width: 100%;
 		text-align: center;
 		border-radius: 10px;
 		text-decoration: none;
-		font-size: var(--heading-six);
+		font-size: var(--font-size-2);
 		margin: 0 auto;
 	}
 	.highlight {
-		color: var(--pink);
+		color: var(--grape-3);
 	}
 </style>

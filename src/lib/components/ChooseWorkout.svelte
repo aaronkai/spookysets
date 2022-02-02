@@ -70,7 +70,7 @@
 			<th scope="col">Delete?</th>
 		</tr>
 		<tr>
-			<td> <a class="workoutLink" href="/pages/workout">Starter Routine</a> </td>
+			<td> <a class="workoutLink" href="/pages/workout">Recommended Routine</a> </td>
 			<td>
 				<p>n/a</p>
 			</td>
@@ -105,46 +105,46 @@
 <style>
 	header {
 		display: grid;
-		grid-gap: var(--spacing-md);
+		grid-gap: var(--size-5);
 	}
 	header h1 {
-		font-size: var(--font-5xl);
+		font-size: var(--font-size-5);
 		text-align: center;
-		color: var(--pink);
+		color: var(--grape-3);
 	}
 	caption {
-		font-size: var(--font-2xl);
+		font-size: var(--font-size-4);
 		font-family: bungee;
-		color: var(--foreground);
-		padding-bottom: 1rem;
+		color: var(--gray-0);
+		padding-bottom: var(--size-4);
 		text-align: center;
 	}
 
 	section {
 		display: grid;
-		grid-gap: var(--spacing-xs);
+		grid-gap: var(--size-3);
 	}
 	table {
 		border-collapse: separate;
 		width: 100%;
-		margin-top: var(--spacing-md);
-		background-color: var(--black-dark);
-		border: 2px solid var(--pink);
-		border-radius: var(--rounded-md);
+		margin-top: var(--size-4);
+		background-color: var(--gray-9);
+		border: 2px solid var(--grape-3);
+		border-radius: var(--radius-2);
 	}
 
 	th,
 	td {
-		border-top: 2px solid var(--pink);
-		border-left: 2px solid var(--pink);
+		border-top: 2px solid var(--grape-3);
+		border-left: 2px solid var(--grape-3);
 
-		padding: 1.5rem 0.25rem;
+		padding: var(--size-5) var(--size-3);
 		text-align: center;
 	}
 	th {
-		color: var(--pink);
+		color: var(--grape-3);
 		font-family: bungee;
-		font-size: var(--font-xl);
+		font-size: var(--font-size-3);
 		border-top: none;
 	}
 	table tr {
@@ -158,14 +158,14 @@
 
 	p {
 		font-family: bungee;
-		color: var(--foreground);
+		color: var(--gray-0);
 	}
 	.icon {
 		height: 1rem;
 		width: 1rem;
 	}
 	.workoutLink {
-		color: var(--green);
+		color: var(--gray-0);
 	}
 	.ghost {
 		height: 3rem;
@@ -178,5 +178,7 @@
 		height: 100%;
 		border: none;
 		cursor: pointer;
+		display: flex;
+		justify-content: center;
 	}
 </style>

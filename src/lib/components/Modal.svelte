@@ -28,7 +28,7 @@
 		justify-content: center;
 	}
 	.background {
-		background: linear-gradient(45deg, var(--black), var(--comment));
+		background: linear-gradient(45deg, var(--gray-9), var(--gray-5));
 		opacity: 0.9;
 		position: absolute;
 		width: 100%;
@@ -36,8 +36,8 @@
 		z-index: -1;
 	}
 	.card {
-		border: 2px solid var(--black-secondary);
-		background-color: var(--black-card);
+		border: 2px solid var(--gray-9);
+		background-color: var(--gray-9);
 		display: grid;
 		gap: 1rem;
 		align-items: center;
@@ -47,15 +47,15 @@
 	}
 	.close {
 		--size: 30px;
-		background: var(--red);
-		color: var(foreground);
-		width: var(--size);
-		height: var(--size);
+		background: var(--red-5);
+		color: var(gray-0);
+		width: var(--size-1);
+		height: var(--size-1);
 		text-align: center;
 		padding: 0;
-		border-radius: var(--size);
+		border-radius: var(--size-1);
 		position: absolute;
-		top: calc(var(--size) / 2 * -1);
+		top: calc(var(--size-1) / 2 * -1);
 		right: 10px;
 		border: none;
 	}

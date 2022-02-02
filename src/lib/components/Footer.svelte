@@ -8,15 +8,15 @@
 	footer {
 		display: flex;
 		justify-content: space-around;
-		padding: var(--spacing-xs);
-		background-color: var(--black-card);
-		border-top: 1px solid var(--black-dark);
+		padding: var(--size-2);
+		background-color: var(--gray-8);
+		border-top: var(--border-size-1) solid var(--grape-3);
 	}
 	footer a,
 	footer p {
 		font-family: bungee, sans-serif;
-		font-size: var(--paragraph-xsmall);
-		color: var(--foreground);
+		font-size: var(--font-size-1);
+		color: var(--gray-0);
 		text-decoration: none;
 		cursor: pointer;
 	}

@@ -44,7 +44,7 @@
 		cursor: pointer;
 	}
 	.timer {
-		background-color: var(--green);
+		background-color: var(--green-3);
 		margin: 0 auto;
 		width: 100%;
 		display: flex;
@@ -54,18 +54,18 @@
 		border: none;
 	}
 	.timer p {
-		font-size: var(--font-4xl);
-		color: var(--black-dark);
+		font-size: var(--font-size-6);
+		color: var(--gray-9);
 		font-family: bungee;
 	}
 	.running {
-		background-color: var(--red);
+		background-color: var(--red-5);
 	}
 	.timer:hover {
 		opacity: 0.75;
 	}
 	.label {
-		font-size: var(--font-sm);
-		color: var(--black-dark);
+		font-size: var(--font-size-2);
+		color: var(--gray-9);
 	}
 </style>

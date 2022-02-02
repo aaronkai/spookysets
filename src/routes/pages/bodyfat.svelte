@@ -82,55 +82,53 @@
 <style>
 	main {
 		display: grid;
-		row-gap: var(--spacing-md);
+		row-gap: var(--size-8);
 		justify-content: center;
 		align-self: center;
 	}
 	header {
 		display: grid;
 		text-align: center;
-		row-gap: var(--spacing-sm);
+		row-gap: var(--size-4);
 	}
 	h1 {
-		font-size: var(--font-3xl);
+		font-size: var(--font-size-5);
 	}
 	h2 {
-		font-size: var(--font-lg);
+		font-size: var(--font-size-4);
 	}
 	form {
 		margin: 0 auto;
-		padding: var(--spacing-md) var(--spacing-sm);
-		border: var(--border-size) solid var(--purple);
-		border-radius: var(--rounded-lg);
+		padding: var(--size-3) var(--size-3);
+		border: var(--size-1) solid var(--violet-3);
+		border-radius: var(--size-2);
 		display: grid;
 		grid-template-columns: 1fr 1fr;
-		row-gap: var(--spacing-md);
-		column-gap: var(--spacing-xs);
+		row-gap: var(--size-3);
+		column-gap: var(--size-3);
 		max-width: 500px;
 		justify-content: center;
-		background-color: var(--black-dark);
+		background-color: var(--gray-9);
 	}
 	form h3 {
 		grid-column: span 2;
-		color: var(--purple);
-		font-size: var(--font-lg);
+		color: var(--violet-3);
+		font-size: var(--font-size-4);
 		text-align: center;
 	}
-	form div {
-		grid-column: span 2;
-	}
+
 	label {
 		font-family: bungee;
-		font-size: var(--font-sm);
+		font-size: var(--font-size-2);
 	}
 	button {
-		margin-top: var(--spacing-md);
-		padding: var(--spacing-sm);
-		background: var(--purple);
+		margin-top: var(--size-3);
+		padding: var(--size-3);
+		background: var(--violet-3);
 		border: none;
 		grid-column: span 2;
-		color: var(--black-dark);
-		font-size: var(--font-md);
-		border-radius: var(--rounded-md);
+		color: var(--gray-9);
+		font-size: var(--font-size-3);
+		border-radius: var(--size-2);
 	}
 </style>

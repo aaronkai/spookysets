@@ -9,6 +9,7 @@ specifiers:
   eslint: ^7.32.0
   eslint-config-prettier: ^8.3.0
   eslint-plugin-svelte3: ^3.4.0
+  open-props: ^1.3.1
   prettier: ~2.4.1
   prettier-plugin-svelte: ^2.6.0
   svelte: ^3.46.3
@@ -25,6 +26,7 @@ devDependencies:
   eslint: 7.32.0
   eslint-config-prettier: 8.3.0_eslint@7.32.0
   eslint-plugin-svelte3: 3.4.0_eslint@7.32.0+svelte@3.46.3
+  open-props: 1.3.1
   prettier: 2.4.1
   prettier-plugin-svelte: 2.6.0_prettier@2.4.1+svelte@3.46.3
   svelte: 3.46.3
@@ -1305,6 +1307,10 @@ packages:
     resolution: {integrity: sha1-WDsap3WWHUsROsF9nFC6753Xa9E=}
     dependencies:
       wrappy: 1.0.2
+    dev: true
+
+  /open-props/1.3.1:
+    resolution: {integrity: sha512-HgBnCluUmk4drU0fpQEhGhXOlRoJI5Jc8ke5Zxx8yg97Hqx1xv9BMb1zasjpGjOzjtLrnMbmWXaVL1yxf3qWOw==}
     dev: true
 
   /optionator/0.9.1:

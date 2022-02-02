@@ -72,13 +72,13 @@
 		margin-bottom: 8px;
 	}
 	.exerciseTitle input {
-		color: var(--purple);
+		color: var(--violet-3);
 		background: none;
 		font-family: bungee, sans-serif;
-		font-size: var(--heading-six);
+		font-size: var(--font-size-3);
 		text-transform: capitalize;
 		border: none;
-		width: 300px;
+		width: var(--size-15);
 	}
 	.exerciseControls {
 		display: flex;
@@ -90,10 +90,11 @@
 		height: 2rem;
 	}
 	.complete {
-		background-color: var(--green);
+		background-color: var(--green-3);
 	}
 	button {
-		border: 1px solid var(--blackTernary);
+		color: var(--gray-9);
+		border: 1px solid var(--gray-9);
 	}
 	button:hover,
 	input:hover {

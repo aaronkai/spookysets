@@ -58,10 +58,10 @@
 		line-height: 35px;
 	}
 	h1 {
-		color: var(--purple);
+		color: var(--violet-3);
 	}
 
 	a {
-		color: var(--purple);
+		color: var(--violet-3);
 	}
 </style>

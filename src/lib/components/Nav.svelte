@@ -34,7 +34,7 @@
 
 		position: fixed;
 		box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-		background-color: var(--black);
+		background-color: var(--gray-9);
 		text-decoration: underline;
 	}
 	.background {
@@ -46,23 +46,23 @@
 
 	a {
 		text-decoration: none;
-		font-size: var(--heading-three);
-		padding-top: 1rem;
+		font-size: var(--size-5);
+		padding-top: var(--size-4);
+		color: var(--violet-3);
 	}
 	.close {
-		--size: 30px;
-		background: var(--purple);
-		color: var(--foreground);
-		width: var(--size);
-		height: var(--size);
-		text-align: center;
-		padding: 0;
-		border-radius: var(--size);
+		background: var(--red-5);
+		color: var(--gray-0);
+		width: var(--size-7);
+		height: var(--size-7);
+		/* text-align: center; */
+		/* padding: 0; */
+		border-radius: var(--size-3);
 		position: absolute;
-		top: 1rem;
-		right: 1rem;
+		top: var(--size-3);
+		right: var(--size-3);
 		border: none;
-		font-size: var(--paragraph);
+		font-size: var(--size-4);
 		cursor: pointer;
 	}
 </style>
