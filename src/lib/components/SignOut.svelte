@@ -16,7 +16,6 @@
 				throw error;
 			} else {
 				message = 'You have signed out';
-				goto('/');
 			}
 		} catch (error) {
 			// looks like there's a bug in Supabase here that throws an error on signout, but it can be ignored
@@ -26,6 +25,7 @@
 			loading = false;
 			user.set(null);
 			ctaVisible = true;
+			goto('/');
 		}
 	}
 </script>
