@@ -34,7 +34,7 @@
 	}
 	.wrapper-inner {
 		justify-self: center;
-		max-width: 800px;
+		max-width: var(--size-content-3);
 		display: grid;
 		align-content: center;
 	}

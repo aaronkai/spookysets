@@ -1,6 +1,6 @@
 <script>
 	import { supabase } from '$lib/supabaseClient';
-	import ErrorMessage from './ErrorMessage.svelte';
+	import ErrorMessage from '$lib/components/ErrorMessage.svelte';
 	import Toast from './Toast.svelte';
 	import { alert } from '$lib/stores/alert';
 	import { user } from '$lib/stores/sessionStore';

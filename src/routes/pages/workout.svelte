@@ -3,7 +3,7 @@
 	import { exercises, title, id } from '$lib/stores/exerciseStore';
 	import Toast from '$lib/components/Toast.svelte';
 	import { alert } from '$lib/stores/alert';
-	import { crossfade, scale, fly } from 'svelte/transition';
+	import { crossfade, fly } from 'svelte/transition';
 	import { flip } from 'svelte/animate';
 
 	import Timer from '$lib/components/Timer.svelte';
@@ -72,15 +72,17 @@
 	<!-- Control Panel -->
 	<section>
 		<div class="controls">
-			<button on:click={addExercise} title="Add Exercise">&plus;</button>
+			<button on:click={addExercise} title="Add Exercise">
+				<span class="addButtonText">Add Exercise</span> &plus;</button
+			>
 			<Timer bind:boopTimer />
 			{#if $user}
 				<button on:click={saveWorkout} title="Save" class="save" disabled={loading}>
-					<img class="icon" src="/save.svg" alt="save icon" />
 					Save
+					<img class="icon" src="/save.svg" alt="save icon" />
 				</button>
 			{:else}
-				<a class="control__login" href="/signUp">Log In to Save</a>
+				<a class="control__login" href="/pages/signUp">Log In to Save</a>
 			{/if}
 		</div>
 		<!-- Exercise List -->
@@ -89,7 +91,7 @@
 				class="exercise"
 				animate:flip
 				in:receive={{ key: exercise.id }}
-				out:send={{ key: exercise.id }}
+				out:send={{ key: exercise.id, duration: 2 }}
 			>
 				<Exercise {exercise} {boopTimer} />
 			</div>
@@ -143,7 +145,8 @@
 		color: var(--gray-9);
 		cursor: pointer;
 	}
-	.save {
+	.save,
+	.addButtonText {
 		font-size: var(--font-size-1);
 	}
 	.exercise-complete {

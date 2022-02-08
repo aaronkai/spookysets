@@ -78,7 +78,8 @@
 		font-size: var(--font-size-3);
 		text-transform: capitalize;
 		border: none;
-		width: var(--size-15);
+		width: 100%;
+		padding-left: 0;
 	}
 	.exerciseControls {
 		display: flex;

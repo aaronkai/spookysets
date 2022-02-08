@@ -61,7 +61,7 @@
 	}
 	.cta {
 		display: grid;
-		grid-gap: var(--size-2);
+		grid-gap: var(--size-6);
 		grid-template-columns: 1fr 1fr;
 	}
 	.cta a {
@@ -76,6 +76,13 @@
 		font-size: var(--font-size-2);
 		margin: 0 auto;
 	}
+
+	.cta a:hover {
+		animation: var(--animation-scale-up) forwards;
+		animation-timing-function: var(--ease-in-out-1);
+		animation-duration: 0.2s;
+	}
+
 	.highlight {
 		color: var(--grape-3);
 	}
