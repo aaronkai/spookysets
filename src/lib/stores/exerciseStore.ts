@@ -6,32 +6,27 @@ let title = writable('Bodyweight Routine');
 let exercises = writable([
 	{
 		id: uid++,
-		name: 'skin the cat 5x2',
-		sets: [false, false, false, false, false],
-	},
-	{
-		id: uid++,
-		name: 'pullup',
+		name: 'pullup progression',
 		sets: [false, false, false],
 	},
 	{
 		id: uid++,
-		name: 'Dumbell Front Squat',
+		name: 'Squat progression',
 		sets: [false, false, false],
 	},
 	{
 		id: uid++,
-		name: 'ring turnout dip',
+		name: 'dip progression',
 		sets: [false, false, false],
 	},
 	{
 		id: uid++,
-		name: 'nordic curl',
+		name: 'deadlift progression',
 		sets: [false, false, false],
 	},
 	{
 		id: uid++,
-		name: 'wide/arch inverted row',
+		name: 'row progression',
 		sets: [false, false, false],
 	},
 	{
