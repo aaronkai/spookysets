@@ -11,12 +11,18 @@
 		background-color: var(--gray-8);
 		border-top: var(--border-size-1) solid var(--grape-3);
 	}
-	footer a,
-	footer p {
+	a,
+	p {
 		font-family: bungee, sans-serif;
 		font-size: var(--font-size-1);
 		color: var(--gray-0);
 		text-decoration: none;
 		cursor: pointer;
+	}
+	@media (max-width: 600px) {
+		a,
+		p {
+			font-size: var(--font-size-0);
+		}
 	}
 </style>

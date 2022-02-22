@@ -61,7 +61,7 @@
 	<img class="ghost" src="/ghost.svg" alt="ghost" />
 
 	<header>
-		<h1>Spooky Sets</h1>
+		<h1>Your Workouts</h1>
 	</header>
 	<table>
 		<caption>Choose a Workout</caption>

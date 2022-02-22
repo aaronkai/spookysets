@@ -66,8 +66,8 @@
 </script>
 
 <Toast />
-{#if !$user}
-	<form id="form" on:submit|preventDefault={handleSubmit}>
+<main>
+	{#if !$user}
 		{#if signIn}
 			<header>
 				<h1>Sign In</h1>
@@ -78,85 +78,94 @@
 				<div class="subheader" />
 			</header>
 		{/if}
-		<label for="email">Email: </label>
-		<input
-			id="email"
-			type="email"
-			placeholder="Your email"
-			autocomplete="email"
-			bind:value={email}
-		/>
-		<label for="password">Password: </label>
-		<input
-			type="password"
-			placeholder="Your password"
-			autocomplete="current-password"
-			bind:value={password}
-		/>
-		{#if errorMessage}
-			<ErrorMessage error={errorMessage} />
-		{/if}
+		<form id="form" on:submit|preventDefault={handleSubmit}>
+			<div>
+				<label for="email">Email: </label>
+				<input
+					id="email"
+					type="email"
+					placeholder="Your email"
+					autocomplete="email"
+					bind:value={email}
+				/>
+			</div>
+			<div>
+				<label for="password">Password: </label>
+				<input
+					type="password"
+					placeholder="Your password"
+					autocomplete="current-password"
+					bind:value={password}
+				/>
+			</div>
+			{#if errorMessage}
+				<ErrorMessage error={errorMessage} />
+			{/if}
 
-		{#if signIn}
-			<input
-				class="submit"
-				type="submit"
-				value={loading ? 'Loading' : 'Sign In'}
-				disabled={loading}
-			/>
-		{:else}
-			<input
-				class="submit"
-				type="submit"
-				value={loading ? 'Loading' : 'Sign Up'}
-				disabled={loading}
-			/>
-		{/if}
-
+			{#if signIn}
+				<input
+					class="submit"
+					type="submit"
+					value={loading ? 'Loading' : 'Sign In'}
+					disabled={loading}
+				/>
+			{:else}
+				<input
+					class="submit"
+					type="submit"
+					value={loading ? 'Loading' : 'Sign Up'}
+					disabled={loading}
+				/>
+			{/if}
+		</form>
 		{#if signIn}
 			<button on:click={toggle}>Do you need to sign up?</button>
 		{:else}
 			<button on:click={toggle}>Already have an account?</button>
 		{/if}
-	</form>
-{:else}
-	<div class="signedIn">
-		<h1>You are signed in!</h1>
-		<a href="/">Go pick a workout</a>
-	</div>
-{/if}
+	{:else}
+		<div class="signedIn">
+			<h1>You are signed in!</h1>
+			<a href="/">Go pick a workout</a>
+		</div>
+	{/if}
+</main>
 
 <style>
-	button {
-		color: var(--grape-3);
-		background: none;
-		border: none;
-		font-size: 1.2rem;
-		padding: 0;
-		/* margin-top: 1rem; */
+	main {
+		display: grid;
+		grid-gap: var(--size-6);
+		justify-content: center;
 	}
+
 	header {
 		text-align: center;
 	}
 	header h1 {
-		margin-bottom: 1rem;
-		font-size: var(--font-size-5);
+		font-size: var(--font-size-6);
+		color: var(--grape-3);
 	}
 
 	form {
-		display: flex;
-		flex-direction: column;
-		padding: 2rem;
-		row-gap: 1rem;
-		border: 2px solid var(violet-3);
+		display: grid;
+		grid-gap: var(--size-7);
+		padding: var(--size-3);
+	}
+
+	button {
+		color: var(--grape-3);
+		background: none;
+		border: none;
+		font-size: var(--font-size-2);
+		padding: 0;
 	}
 
 	label {
 		font-family: bungee;
-
 		display: grid;
 		grid-template-columns: 1fr 3fr;
 		align-items: baseline;
+		margin-bottom: var(--size-2);
 	}
 	input {
 		border: none;
@@ -166,18 +175,29 @@
 		width: 100%;
 	}
 	.submit {
-		background-color: var(--green-3);
-		border: none;
-		padding: 0.5rem 1rem;
-		margin: 1rem 0;
-		font-weight: 700;
+		display: block;
+		background: var(--green-4);
 		color: var(--gray-9);
+		padding: var(--size-3);
+		width: 100%;
+		text-align: center;
+		border-radius: var(--radius-2);
+		text-decoration: none;
+		font-size: var(--font-size-2);
+		margin: 0 auto;
 		font-family: bungee;
+		border-bottom: none;
 	}
+
+	.submit:hover {
+		background: var(--grape-3);
+	}
+
 	.signedIn {
 		display: grid;
 		grid-gap: var(--size-3);
 	}
+
 	.signedIn a,
 	.signedIn h1 {
 		color: var(--grape-3);

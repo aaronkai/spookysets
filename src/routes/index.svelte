@@ -2,6 +2,8 @@
 	import ChooseWorkout from '$lib/components/ChooseWorkout.svelte';
 	import { user } from '$lib/stores/sessionStore';
 	import { supabase } from '$lib/supabaseClient';
+	import '$lib/styles/reset.css';
+	import '$lib/styles/global.css';
 	let ctaVisible = true;
 	//instantiate user store
 	user.set(supabase.auth.user());
@@ -18,8 +20,8 @@
 
 <main>
 	{#if !$user}
+		<img src="/ghost.svg" alt="ghost" />
 		<header>
-			<img src="/ghost.svg" alt="ghost" />
 			<h1>Spooky Sets</h1>
 			<h2>Create a <a href="/pages/workout" class="highlight">Workout</a></h2>
 			<h2>List Your <a href="pages/workout" class="highlight">Exercises</a></h2>
@@ -37,7 +39,7 @@
 <style>
 	main {
 		display: grid;
-		grid-gap: var(--size-5);
+		grid-gap: var(--size-9);
 		align-self: center;
 		justify-content: center;
 	}
@@ -46,7 +48,7 @@
 		grid-gap: var(--size-5);
 	}
 	header h1 {
-		font-size: var(--font-size-5);
+		font-size: var(--font-size-6);
 		text-align: center;
 		color: var(--grape-3);
 	}
@@ -55,8 +57,8 @@
 		text-align: center;
 	}
 	img {
-		height: 3rem;
-		width: 3rem;
+		height: var(--size-fluid-7);
+		width: var(--size-fluid-7);
 		margin: auto;
 	}
 	.cta {
@@ -68,22 +70,27 @@
 		display: block;
 		background: var(--green-4);
 		color: var(--gray-9);
-		padding: 1rem;
+		padding: var(--size-3);
 		width: 100%;
 		text-align: center;
-		border-radius: 10px;
+		border-radius: var(--radius-2);
 		text-decoration: none;
 		font-size: var(--font-size-2);
 		margin: 0 auto;
 	}
 
 	.cta a:hover {
-		animation: var(--animation-scale-up) forwards;
-		animation-timing-function: var(--ease-in-out-1);
-		animation-duration: 0.2s;
+		background: var(--grape-3);
 	}
 
 	.highlight {
 		color: var(--grape-3);
+	}
+
+	@media (max-width: 600px) {
+		.cta {
+			grid-template-columns: 1fr;
+			grid-template-rows: repeat(2, 1fr);
+		}
 	}
 </style>
