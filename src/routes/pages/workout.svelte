@@ -121,6 +121,7 @@
 		text-transform: capitalize;
 		border: none;
 		width: 100%;
+		text-shadow: 0 0 10px var(--violet-5), 0 0 25px var(--violet-7);
 	}
 
 	main {

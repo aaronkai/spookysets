@@ -9,7 +9,7 @@
 		justify-content: space-around;
 		padding: var(--size-2);
 		background-color: var(--gray-8);
-		border-top: var(--border-size-1) solid var(--grape-3);
+		border-top: var(--border-size-1) solid var(--gray-7);
 	}
 	a,
 	p {

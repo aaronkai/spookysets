@@ -51,6 +51,7 @@
 		font-size: var(--font-size-6);
 		text-align: center;
 		color: var(--grape-3);
+		text-shadow: 0 0 10px var(--grape-5), 0 0 25px var(--grape-7);
 	}
 	header h2 {
 		font-size: var(--font-size-4);
@@ -77,6 +78,7 @@
 		text-decoration: none;
 		font-size: var(--font-size-2);
 		margin: 0 auto;
+		box-shadow: var(--shadow-1);
 	}
 
 	.cta a:hover {

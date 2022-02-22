@@ -144,6 +144,7 @@
 	header h1 {
 		font-size: var(--font-size-6);
 		color: var(--grape-3);
+		text-shadow: 0 0 10px var(--grape-5), 0 0 25px var(--grape-7);
 	}
 
 	form {

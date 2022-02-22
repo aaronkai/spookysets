@@ -111,6 +111,7 @@
 		font-size: var(--font-size-5);
 		text-align: center;
 		color: var(--grape-3);
+		text-shadow: 0 0 10px var(--grape-5), 0 0 25px var(--grape-7);
 	}
 	caption {
 		font-size: var(--font-size-4);

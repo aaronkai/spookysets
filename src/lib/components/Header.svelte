@@ -26,7 +26,7 @@
 		background-color: var(--gray-8);
 		padding: var(--size-2);
 		width: 100%;
-		border-bottom: var(--border-size-1) solid var(--grape-3);
+		border-bottom: var(--border-size-1) solid var(--gray-7);
 	}
 
 	a {
