@@ -9,6 +9,11 @@
 	box-sizing: border-box;
 }
 
+:root {
+	--shadow-strength: 20%;
+	--shadow-color: 220 40% 2%;
+}
+
 body,
 #svelte {
 	background-color: var(--gray-9);

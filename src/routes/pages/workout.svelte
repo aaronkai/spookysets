@@ -122,6 +122,8 @@
 		border: none;
 		width: 100%;
 		text-shadow: 0 0 10px var(--violet-5), 0 0 25px var(--violet-7);
+		margin-bottom: var(--size-3);
+		text-align: center;
 	}
 
 	main {
@@ -139,6 +141,7 @@
 		display: grid;
 		grid-template-columns: 1fr 1fr 1fr;
 		justify-content: center;
+		grid-gap: var(--size-3);
 	}
 	.controls img {
 		width: 50%;
@@ -162,10 +165,11 @@
 		justify-content: center;
 		align-items: center;
 		flex-direction: column;
-		border: 10px solid var(--gray-9);
+		/* border: 10px solid var(--gray-9); */
 		font-size: var(--font-size-5);
 		color: var(--gray-9);
 		cursor: pointer;
+		box-shadow: var(--shadow-4);
 	}
 	button:hover {
 		opacity: 0.75;
@@ -190,6 +194,6 @@
 		align-items: center;
 		flex-direction: column;
 		padding: 10px;
-		line-height: 1rem;
+		line-height: var(--size-6);
 	}
 </style>

@@ -52,6 +52,7 @@
 		align-items: center;
 		flex-direction: column;
 		border: none;
+		box-shadow: var(--shadow-4);
 	}
 	.timer p {
 		font-size: var(--font-size-6);

@@ -78,7 +78,9 @@
 		text-decoration: none;
 		font-size: var(--font-size-2);
 		margin: 0 auto;
-		box-shadow: var(--shadow-1);
+		box-shadow: var(--shadow-4);
+		--shadow-strength: 10%;
+		--shadow-color: 220 40% 2%;
 	}
 
 	.cta a:hover {
