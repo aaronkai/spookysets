@@ -137,25 +137,30 @@
 		display: grid;
 		row-gap: var(--size-3);
 	}
+
 	.controls {
 		display: grid;
 		grid-template-columns: 1fr 1fr 1fr;
 		justify-content: center;
 		grid-gap: var(--size-3);
 	}
+
 	.controls img {
 		width: 50%;
 		height: 50%;
 		color: var(--gray-9);
 		cursor: pointer;
 	}
+
 	.save,
 	.addButtonText {
 		font-size: var(--font-size-1);
 	}
+
 	.exercise-complete {
 		opacity: 50%;
 	}
+
 	button {
 		margin: 0 auto;
 		background-color: var(--green-3);
@@ -171,12 +176,15 @@
 		cursor: pointer;
 		box-shadow: var(--shadow-4);
 	}
+
 	button:hover {
 		opacity: 0.75;
 	}
+
 	button:disabled {
 		background-color: var(--green-3);
 	}
+
 	@media only screen and (max-width: 450px) {
 	}
 	.control__login {
