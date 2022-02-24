@@ -8,7 +8,7 @@
 *::after {
 	box-sizing: border-box;
 }
-
+/* Fix for box shadow on dark */
 :root {
 	--shadow-strength: 20%;
 	--shadow-color: 220 40% 2%;
