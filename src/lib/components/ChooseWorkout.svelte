@@ -2,6 +2,11 @@
 	import { supabase } from '$lib/supabaseClient';
 	import { exercises, id, title } from '$lib/stores/exerciseStore';
 
+	const defaultWorkout = {
+		id: $id,
+		name: $title,
+		exercises: $exercises,
+	};
 	let loading = false;
 	let allWorkouts = [];
 
@@ -23,12 +28,13 @@
 	// 		loading = false;
 	// 	}
 	// }
+
 	//Read existing workout/workouts
 	async function getAllWorkouts() {
 		try {
 			loading = true;
 			const user = supabase.auth.user();
-			const { data, error } = await supabase.from('workouts').select();
+			const { data, error } = await supabase.from('workouts').select().order('created_at');
 			allWorkouts = data;
 		} catch (error) {
 			console.error(error);
@@ -50,11 +56,11 @@
 			const { data, error } = await supabase
 				.from('workouts')
 				.insert([{ user_id: user.id, name: `${workout.name} copy`, exercises: workout.exercises }]);
-			getAllWorkouts();
 		} catch (error) {
 			console.error(error);
 		} finally {
 			loading = false;
+			getAllWorkouts();
 		}
 	}
 
@@ -91,7 +97,15 @@
 				<p>n/a</p>
 			</td>
 			<td>
-				<p>n/a</p>
+				<button href="#">
+					<img
+						class="icon"
+						src="/clone.svg"
+						alt="clone icon"
+						title="Clone Workout?"
+						on:click={cloneWorkout(defaultWorkout)}
+					/>
+				</button>
 			</td>
 		</tr>
 		{#each allWorkouts as workout}
@@ -134,8 +148,8 @@
 
 <style>
 	header {
-		display: grid;
-		grid-gap: var(--size-5);
+		display: flex;
+		justify-content: center;
 	}
 	header h1 {
 		font-size: var(--font-size-5);

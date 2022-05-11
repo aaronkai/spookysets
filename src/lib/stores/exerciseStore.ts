@@ -2,7 +2,7 @@ import { writable } from 'svelte/store';
 
 let uid = 0;
 const id = writable();
-const title = writable('Bodyweight Routine');
+const title = writable('/r/bodyweightfitness Recomended Routine');
 const exercises = writable([
 	{
 		id: uid++,
@@ -51,4 +51,4 @@ const exercises = writable([
 	},
 ]);
 
-export { exercises, title, id, locked };
+export { exercises, title, id };
