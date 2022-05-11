@@ -31,7 +31,7 @@
 				name: $title,
 				exercises: $exercises,
 			};
-			const { data, error } = await supabase.from('workouts').insert(upserts);
+			const { data, error } = await supabase.from('workouts').upsert(upserts);
 			if (error) {
 				throw error;
 			} else {
