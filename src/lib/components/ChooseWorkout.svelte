@@ -6,23 +6,23 @@
 	let allWorkouts = [];
 
 	//create a new workout
-	async function createNewWorkout() {
-		try {
-			loading = true;
-			const user = supabase.auth.user();
+	// async function createNewWorkout() {
+	// 	try {
+	// 		loading = true;
+	// 		const user = supabase.auth.user();
 
-			const inserts = {
-				user_id: user.id,
-				name: 'example 1',
-				exercises: ['pushup', 'situp'],
-			};
-			const { data, error } = await supabase.from('workouts').insert(inserts);
-		} catch (error) {
-			console.error(error);
-		} finally {
-			loading = false;
-		}
-	}
+	// 		const inserts = {
+	// 			user_id: user.id,
+	// 			name: 'New Workout',
+	// 			exercises: ['pushup', 'situp'],
+	// 		};
+	// 		const { data, error } = await supabase.from('workouts').insert(inserts);
+	// 	} catch (error) {
+	// 		console.error(error);
+	// 	} finally {
+	// 		loading = false;
+	// 	}
+	// }
 	//Read existing workout/workouts
 	async function getAllWorkouts() {
 		try {
@@ -41,6 +41,21 @@
 		$id = workout.id;
 		$title = workout.name;
 		$exercises = workout.exercises;
+	}
+
+	async function cloneWorkout(workout) {
+		try {
+			loading = true;
+			const user = supabase.auth.user();
+			const { data, error } = await supabase
+				.from('workouts')
+				.insert([{ user_id: user.id, name: `${workout.name} copy`, exercises: workout.exercises }]);
+			getAllWorkouts();
+		} catch (error) {
+			console.error(error);
+		} finally {
+			loading = false;
+		}
 	}
 
 	async function deleteWorkout(workout) {
@@ -68,9 +83,13 @@
 		<tr>
 			<th scope="col">Workout Name</th>
 			<th scope="col">Delete?</th>
+			<th scope="col">Clone?</th>
 		</tr>
 		<tr>
 			<td> <a class="workoutLink" href="/pages/workout">Recommended Routine</a> </td>
+			<td>
+				<p>n/a</p>
+			</td>
 			<td>
 				<p>n/a</p>
 			</td>
@@ -94,6 +113,17 @@
 							alt="trashcan icon"
 							title="Delete Workout"
 							on:click={deleteWorkout(workout)}
+						/>
+					</button>
+				</td>
+				<td>
+					<button href="#">
+						<img
+							class="icon"
+							src="/clone.svg"
+							alt="clone icon"
+							title="Clone Workout?"
+							on:click={cloneWorkout(workout)}
 						/>
 					</button>
 				</td>
