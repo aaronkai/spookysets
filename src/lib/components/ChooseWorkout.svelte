@@ -103,7 +103,7 @@
 						src="/clone.svg"
 						alt="clone icon"
 						title="Clone Workout?"
-						on:click={cloneWorkout(defaultWorkout)}
+						on:click={() => cloneWorkout(defaultWorkout)}
 					/>
 				</button>
 			</td>
