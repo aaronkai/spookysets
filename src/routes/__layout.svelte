@@ -1,4 +1,5 @@
 <script>
+	import '../app.css';
 	import Footer from '$lib/components/Footer.svelte';
 	// import '$lib/styles/reset.css';
 	// import '$lib/styles/global.css';
@@ -9,17 +10,17 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com" />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 	<link
-		href="https://fonts.googleapis.com/css2?family=Bungee&family=Roboto&display=swap"
+		href="https://fonts.googleapis.com/css2?family=Bungee&amp;family=Roboto&amp;display=swap"
 		rel="stylesheet"
 	/>
 	<title>Spooky Sets</title>
 </svelte:head>
 <div class="wrapper">
-	<Header />
+	<header />
 	<div class="wrapper-inner">
 		<slot />
 	</div>
-	<Footer />
+	<footer />
 </div>
 
 <style>

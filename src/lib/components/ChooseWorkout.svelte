@@ -80,10 +80,16 @@
 
 <section use:getAllWorkouts>
 	<img class="ghost" src="/ghost.svg" alt="ghost" />
-
+	<!-- header h1 {
+		font-size: var(--font-size-5);
+		text-align: center;
+		color: var(--grape-3);
+		text-shadow: 0 0 10px var(--grape-5), 0 0 25px var(--grape-7);
+	} -->
 	<header>
-		<h1>Your Workouts</h1>
+		<h1 class="text-center text-fuchsia-300 text-4xl text-shadow">Your Workouts</h1>
 	</header>
+		<button class="bg-blue-700">New Workout</button>
 	<table>
 		<caption>Choose a Workout</caption>
 		<tr>
@@ -147,16 +153,8 @@
 </section>
 
 <style>
-	header {
-		display: flex;
-		justify-content: center;
-	}
-	header h1 {
-		font-size: var(--font-size-5);
-		text-align: center;
-		color: var(--grape-3);
-		text-shadow: 0 0 10px var(--grape-5), 0 0 25px var(--grape-7);
-	}
+
+
 	caption {
 		font-size: var(--font-size-4);
 		font-family: bungee;
