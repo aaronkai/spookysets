@@ -31,7 +31,7 @@
 </script>
 
 <button
-	class="bg-none border-none text-fuchsia-300 font-bungee text-3xl underline underline-offset-2 text-start"
+	class="bg-none border-none text-fuchsia-300 font-bungee text-3xl underline underline-offset-2 text-start z-50 cursor-pointer"
 	type="button"
 	on:click={signOut}
 	disabled={loading}

@@ -32,25 +32,6 @@
 
 <style>
 	a {
-		@apply text-fuchsia-300 text-3xl font-bungee underline underline-offset-2;
+		@apply text-fuchsia-300 text-3xl font-bungee underline underline-offset-2 z-50;
 	}
-	/* a {
-		text-decoration: none;
-		font-size: var(--size-5);
-		padding-top: var(--size-4);
-		color: var(--violet-3);
-	}
-	.close {
-		background: var(--red-5);
-		color: var(--gray-0);
-		width: var(--size-7);
-		height: var(--size-7);
-		border-radius: var(--size-3);
-		position: absolute;
-		top: var(--size-3);
-		right: var(--size-3);
-		border: none;
-		font-size: var(--size-4);
-		cursor: pointer;
-	} */
 </style>
