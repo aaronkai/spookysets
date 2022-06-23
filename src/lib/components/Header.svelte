@@ -7,50 +7,16 @@
 	}
 </script>
 
-<header>
+<header
+	class="flex flex-row justify-between items-center bg-gray-800 p-4 w-full border-b-2 border-fuchsia-300 "
+>
 	<div>
-		<a href="/">Spooky sets</a>
+		<a class="no-underline text-2xl text-fuchsia-300 font-bungee" href="/">Spooky sets</a>
 	</div>
 	{#if isNavOpen}
 		<Nav {toggleNav} />
 	{/if}
-	<button on:click={toggleNav}><img class="menu" alt="menu-icon" src="/menu.svg" /></button>
+	<button on:click={toggleNav}
+		><img class="h-8 w-8 m-0 border-none" alt="menu-icon" src="/menu.svg" /></button
+	>
 </header>
-
-<style>
-	header {
-		display: flex;
-		flex-direction: row;
-		justify-content: space-between;
-		align-items: center;
-		background-color: var(--gray-8);
-		padding: var(--size-2);
-		width: 100%;
-		border-bottom: var(--border-size-1) solid var(--grape-3);
-	}
-
-	a {
-		text-decoration: none;
-		font-size: var(--font-size-4);
-		color: var(--grape-3);
-	}
-
-	.menu {
-		height: var(--font-size-4);
-		width: var(--font-size-4);
-		color: var(--green-3);
-		border: 0;
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-
-	button {
-		background: none;
-		border: none;
-		padding: 0;
-		margin: 0;
-		height: 1.5rem;
-		width: 1.5rem;
-	}
-</style>

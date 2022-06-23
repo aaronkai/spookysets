@@ -2,8 +2,6 @@
 	import ChooseWorkout from '$lib/components/ChooseWorkout.svelte';
 	import { user } from '$lib/stores/sessionStore';
 	import { supabase } from '$lib/supabaseClient';
-	import '$lib/styles/reset.css';
-	import '$lib/styles/global.css';
 	let ctaVisible = true;
 	//instantiate user store
 	user.set(supabase.auth.user());
@@ -18,11 +16,11 @@
 	}
 </script>
 
-<main>
+<main class="grid gap-8 self-center justify-center">
 	{#if !$user}
 		<img src="/ghost.svg" alt="ghost" />
-		<header>
-			<h1>Spooky Sets</h1>
+		<header class="grid gap-4">
+			<h1 class="font-bungee text-5xl align-middle">Spooky Sets</h1>
 			<h2>Create a <a href="/pages/workout" class="highlight">Workout</a></h2>
 			<h2>List Your <a href="pages/workout" class="highlight">Exercises</a></h2>
 			<h2>Track Your <a href="/pages/workout" class="highlight">Sets</a></h2>
@@ -36,13 +34,8 @@
 	{/if}
 </main>
 
-<style>
-	main {
-		display: grid;
-		grid-gap: var(--size-9);
-		align-self: center;
-		justify-content: center;
-	}
+<!-- <style>
+
 	header {
 		display: grid;
 		grid-gap: var(--size-5);
@@ -93,4 +86,4 @@
 			grid-template-rows: repeat(2, 1fr);
 		}
 	}
-</style>
+</style> -->

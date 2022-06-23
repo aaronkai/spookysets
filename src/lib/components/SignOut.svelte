@@ -30,13 +30,20 @@
 	}
 </script>
 
-<button type="button" on:click={signOut} disabled={loading}> Sign Out </button>
+<button
+	class="bg-none border-none text-fuchsia-300 font-bungee text-3xl underline underline-offset-2 text-start"
+	type="button"
+	on:click={signOut}
+	disabled={loading}
+>
+	Sign Out
+</button>
 
 {#if message}
 	<p>{message}</p>
 {/if}
 
-<style>
+<!-- <style>
 	button {
 		background: none;
 		border: none;
@@ -48,4 +55,4 @@
 		text-decoration: underline;
 		cursor: pointer;
 	}
-</style>
+</style> -->
