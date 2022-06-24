@@ -41,31 +41,29 @@
 
 <style>
 	button {
-		cursor: pointer;
+		@apply cursor-pointer;
 	}
 	.timer {
-		background-color: var(--green-3);
+		@apply bg-emerald-400 mx-auto w-full flex justify-center items-center flex-col 
+		/* background-color: var(--green-3);
 		margin: 0 auto;
 		width: 100%;
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		flex-direction: column;
-		border: none;
+		border: none; */;
 	}
 	.timer p {
-		font-size: var(--font-size-6);
-		color: var(--gray-9);
-		font-family: bungee;
+		@apply text-5xl text-slate-900 font-bungee;
 	}
 	.running {
-		background-color: var(--red-5);
+		@apply bg-red-400;
 	}
 	.timer:hover {
-		opacity: 0.75;
+		@apply opacity-75;
 	}
 	.label {
-		font-size: var(--font-size-2);
-		color: var(--gray-9);
+		@apply text-2xl text-slate-900 font-bungee;
 	}
 </style>

@@ -57,10 +57,9 @@
 	}
 </script>
 
-<section use:getAllWorkouts>
-	<img class="ghost" src="/ghost.svg" alt="ghost" />
-
+<section class="p-4" use:getAllWorkouts>
 	<header>
+		<img class="ghost" src="/ghost.svg" alt="ghost" />
 		<h1>Your Workouts</h1>
 	</header>
 	<table>
@@ -104,81 +103,51 @@
 
 <style>
 	header {
-		display: grid;
-		grid-gap: var(--size-5);
+		@apply mb-4 grid grid-cols-[auto_1fr];
 	}
 	header h1 {
-		font-size: var(--font-size-5);
-		text-align: center;
-		color: var(--grape-3);
+		@apply text-center font-bungee text-5xl text-indigo-300;
 	}
 	caption {
-		font-size: var(--font-size-4);
-		font-family: bungee;
-		color: var(--gray-0);
-		padding-bottom: var(--size-4);
-		text-align: center;
+		@apply text-3xl font-bungee text-gray-50 pb-4 text-center;
 	}
 
 	section {
-		display: grid;
-		grid-gap: var(--size-3);
+		@apply grid gap-4;
 	}
 	table {
-		border-collapse: separate;
-		width: 100%;
-		margin-top: var(--size-4);
-		background-color: var(--gray-9);
-		border: 2px solid var(--grape-3);
-		border-radius: var(--radius-2);
+		@apply w-full mt-4 bg-slate-900 border-2 border-indigo-300 rounded  border-separate;
 	}
 
 	th,
 	td {
-		border-top: 2px solid var(--grape-3);
-		border-left: 2px solid var(--grape-3);
-
-		padding: var(--size-5) var(--size-3);
-		text-align: center;
+		@apply border-t-2 border-l-2 py-4 px-2 text-center border-indigo-300;
 	}
 	th {
-		color: var(--grape-3);
-		font-family: bungee;
-		font-size: var(--font-size-3);
-		border-top: none;
+		@apply text-indigo-300 text-xl border-t-0 font-bungee;
 	}
 	table tr {
-		width: 100%;
+		@apply w-full;
 	}
 
 	td:first-child,
 	th:first-child {
-		border-left: none;
+		@apply border-l-0;
 	}
 
 	p {
-		font-family: bungee;
-		color: var(--gray-0);
+		@apply text-gray-50 font-bungee;
 	}
 	.icon {
-		height: 1rem;
-		width: 1rem;
+		@apply w-6 h-6;
 	}
 	.workoutLink {
-		color: var(--gray-0);
+		@apply text-gray-50 font-bungee;
 	}
 	.ghost {
-		height: 3rem;
-		width: 3rem;
-		margin: auto;
+		@apply h-12 w-12 m-auto;
 	}
 	button {
-		background: none;
-		width: 100%;
-		height: 100%;
-		border: none;
-		cursor: pointer;
-		display: flex;
-		justify-content: center;
+		@apply bg-none w-full h-full border-none cursor-pointer flex justify-center;
 	}
 </style>

@@ -14,7 +14,7 @@
 	let height: number;
 	let bodyfatPercentage: number;
 	let sex: Sex = 'MALE';
-	let hips: number = 0;
+	let hips: number;
 
 	function processForm(lbs: number, neck: number, waist: number, height: number, hips): number {
 		if (sex === Sex.Male) {
@@ -81,54 +81,28 @@
 
 <style>
 	main {
-		display: grid;
-		row-gap: var(--size-8);
-		justify-content: center;
-		align-self: center;
+		@apply grid gap-8 justify-center items-center;
 	}
 	header {
-		display: grid;
-		text-align: center;
-		row-gap: var(--size-4);
+		@apply grid text-center gap-4;
 	}
 	h1 {
-		font-size: var(--font-size-5);
+		@apply text-5xl font-bungee text-indigo-300;
 	}
 	h2 {
-		font-size: var(--font-size-4);
+		@apply text-3xl font-bungee text-indigo-300;
 	}
 	form {
-		margin: 0 auto;
-		padding: var(--size-3) var(--size-3);
-		border: var(--size-1) solid var(--violet-3);
-		border-radius: var(--size-2);
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		row-gap: var(--size-3);
-		column-gap: var(--size-3);
-		max-width: 500px;
-		justify-content: center;
-		background-color: var(--gray-9);
+		@apply mx-auto py-3 px-5 border-2 border-indigo-300 rounded grid grid-cols-2 gap-4 max-w-sm justify-center;
 	}
 	form h3 {
-		grid-column: span 2;
-		color: var(--violet-3);
-		font-size: var(--font-size-4);
-		text-align: center;
+		@apply col-span-2 text-indigo-300 text-3xl text-center font-bungee;
 	}
 
 	label {
-		font-family: bungee;
-		font-size: var(--font-size-2);
+		@apply font-bungee text-lg text-indigo-300;
 	}
 	button {
-		margin-top: var(--size-3);
-		padding: var(--size-3);
-		background: var(--violet-3);
-		border: none;
-		grid-column: span 2;
-		color: var(--gray-9);
-		font-size: var(--font-size-3);
-		border-radius: var(--size-2);
+		@apply mt-4 p-4 bg-indigo-300 border-none col-span-2 text-slate-900 text-xl rounded font-bungee;
 	}
 </style>

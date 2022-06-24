@@ -73,7 +73,7 @@
 				<h1>Sign In</h1>
 			</header>
 		{:else}
-			<header>
+			<header class="text-center">
 				<h1>Sign Up Now</h1>
 				<div class="subheader" />
 			</header>
@@ -133,73 +133,38 @@
 
 <style>
 	main {
-		display: grid;
-		grid-gap: var(--size-6);
-		justify-content: center;
+		@apply grid gap-6 justify-center;
 	}
 
-	header {
-		text-align: center;
-	}
 	header h1 {
-		font-size: var(--font-size-6);
-		color: var(--grape-3);
+		@apply text-5xl font-bungee text-indigo-300;
 	}
 
 	form {
-		display: grid;
-		grid-gap: var(--size-7);
-		padding: var(--size-3);
+		@apply grid gap-4 py-4;
 	}
 
 	button {
-		color: var(--grape-3);
-		background: none;
-		border: none;
-		font-size: var(--font-size-2);
-		padding: 0;
+		@apply text-indigo-300 bg-none border-none text-xl font-bungee;
 	}
 
 	label {
-		font-family: bungee;
-		display: grid;
-		grid-template-columns: 1fr 3fr;
-		align-items: baseline;
-		margin-bottom: var(--size-2);
-	}
-	input {
-		border: none;
-		background-color: var(--gray-8);
-		border-bottom: 2px solid var(--grape-3);
-		color: var(--foreground);
-		width: 100%;
-	}
-	.submit {
-		display: block;
-		background: var(--green-4);
-		color: var(--gray-9);
-		padding: var(--size-3);
-		width: 100%;
-		text-align: center;
-		border-radius: var(--radius-2);
-		text-decoration: none;
-		font-size: var(--font-size-2);
-		margin: 0 auto;
-		font-family: bungee;
-		border-bottom: none;
+		@apply text-xl font-bungee text-indigo-300 grid items-baseline mb-2;
 	}
 
-	.submit:hover {
-		background: var(--grape-3);
+	input {
+		@apply border-none p-2 w-full rounded;
+	}
+	.submit {
+		@apply block bg-emerald-400 p-4 text-slate-900 w-full text-center rounded font-bungee no-underline text-2xl hover:bg-indigo-300;
 	}
 
 	.signedIn {
-		display: grid;
-		grid-gap: var(--size-3);
+		@apply grid gap-4;
 	}
 
 	.signedIn a,
 	.signedIn h1 {
-		color: var(--grape-3);
+		@apply text-indigo-300;
 	}
 </style>

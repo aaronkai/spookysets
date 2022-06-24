@@ -46,12 +46,6 @@
 
 <style>
 	img {
-		height: 30px;
-		width: 30px;
-		color: var(--off-white);
-		background-color: var(--off-white);
-		/* border: 2px solid var(--off-black); */
-		border-radius: 50%;
-		padding: 2px;
+		@apply h-12 w-12;
 	}
 </style>

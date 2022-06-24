@@ -71,7 +71,7 @@
 	<h1 contenteditable="true" bind:innerHTML={$title} type="text" />
 	<!-- Control Panel -->
 	<section>
-		<div class="controls">
+		<div class="controls grid gap-1 mb-4">
 			<button on:click={addExercise} title="Add Exercise">
 				<span class="addButtonText">Add Exercise</span> &plus;</button
 			>
@@ -114,81 +114,39 @@
 
 <style>
 	h1 {
-		color: var(--violet-3);
-		background-color: var(--gray-9);
-		font-family: bungee, sans-serif;
-		font-size: var(--font-size-5);
-		text-transform: capitalize;
-		border: none;
-		width: 100%;
+		@apply text-indigo-300 bg-slate-900 font-bungee text-3xl border-0 w-full text-center mt-8;
 	}
 
 	main {
-		display: grid;
-		padding: var(--size-3);
-		row-gap: var(--size-3);
+		@apply grid px-4 gap-8;
 	}
 
 	section {
-		margin-top: 0 var(--size-3);
-		display: grid;
-		row-gap: var(--size-3);
+		@apply grid gap-4;
 	}
 	.controls {
-		display: grid;
-		grid-template-columns: 1fr 1fr 1fr;
-		justify-content: center;
+		@apply grid grid-cols-3 justify-center;
 	}
 	.controls img {
-		width: 50%;
-		height: 50%;
-		color: var(--gray-9);
-		cursor: pointer;
+		@apply w-1/2 h-1/2 text-slate-900 cursor-pointer font-bungee;
 	}
 	.save,
 	.addButtonText {
-		font-size: var(--font-size-1);
+		@apply text-xl;
 	}
 	.exercise-complete {
-		opacity: 50%;
+		@apply opacity-50;
 	}
 	button {
-		margin: 0 auto;
-		background-color: var(--green-3);
-		height: 100px;
-		width: 100%;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		flex-direction: column;
-		border: 10px solid var(--gray-9);
-		font-size: var(--font-size-5);
-		color: var(--gray-9);
-		cursor: pointer;
+		@apply bg-emerald-400  flex justify-center items-center flex-col text-5xl text-slate-900 cursor-pointer  font-bungee;
 	}
 	button:hover {
-		opacity: 0.75;
+		@apply opacity-75;
 	}
 	button:disabled {
-		background-color: var(--green-3);
-	}
-	@media only screen and (max-width: 450px) {
+		@apply bg-emerald-200;
 	}
 	.control__login {
-		margin: 0 auto;
-		height: 100px;
-		width: 100%;
-		/* background-color: var(--green); */
-		color: var(--violet-3);
-		font-family: bungee;
-		font-size: var(--font-size-3);
-		border: 10px solid var(--gray-9);
-		text-align: center;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		flex-direction: column;
-		padding: 10px;
-		line-height: 1rem;
+		@apply mx-auto h-28 w-full text-slate-900 bg-emerald-400 font-bungee text-center flex justify-center items-center flex-col p-8;
 	}
 </style>

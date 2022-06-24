@@ -2,11 +2,11 @@
 	export const prerender = true;
 </script>
 
-<main>
+<main class="grid gap-4 p-8">
 	<header>
-		<h1>About Spooky Sets</h1>
+		<h1 class="text-indigo-300 text-5xl font-bungee">About Spooky Sets</h1>
 	</header>
-	<article>
+	<article class="grid gap-2">
 		<p>
 			I've beeen doing the r/bodyweightfitness <a
 				href="https://www.reddit.com/r/bodyweightfitness/wiki/kb/recommended_routine/"
@@ -48,20 +48,10 @@
 </main>
 
 <style>
-	main {
-		display: grid;
-		row-gap: 3rem;
-	}
-	article {
-		display: grid;
-		row-gap: 1.5rem;
-		line-height: 35px;
-	}
-	h1 {
-		color: var(--violet-3);
-	}
-
 	a {
-		color: var(--violet-3);
+		@apply text-indigo-300 font-bungee;
+	}
+	p {
+		@apply text-gray-50 text-lg;
 	}
 </style>

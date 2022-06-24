@@ -24,18 +24,9 @@
 
 <style>
 	aside {
-		background-color: var(--green-3);
-		position: fixed;
-		bottom: 20px;
-		left: 0px;
-		right: 0px;
-		padding: 1rem;
+		@apply bg-emerald-400 fixed bottom-3 left-0 right-0 p-4 z-50;
 	}
 	aside p {
-		color: var(--gray-9);
-		font-family: bungee;
-		text-align: center;
-		margin: 0;
-		max-width: 100%;
+		@apply text-slate-900 font-bungee text-center m-0 max-w-full;
 	}
 </style>

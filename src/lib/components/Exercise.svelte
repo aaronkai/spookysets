@@ -68,37 +68,21 @@
 
 <style>
 	.exerciseTitle {
-		display: flex;
-		margin-bottom: 8px;
+		@apply flex mb-4;
 	}
 	.exerciseTitle input {
-		color: var(--violet-3);
-		background: none;
-		font-family: bungee, sans-serif;
-		font-size: var(--font-size-3);
-		text-transform: capitalize;
-		border: none;
-		width: 100%;
-		padding-left: 0;
+		@apply text-indigo-300 font-bungee text-2xl border-none w-full pl-0 bg-slate-900;
 	}
 	.exerciseControls {
-		display: flex;
-		width: 100%;
-		flex-wrap: wrap;
+		@apply flex w-full;
 	}
 	.exerciseControls button {
-		flex: 1;
-		height: 2rem;
-	}
-	.complete {
-		background-color: var(--green-3);
+		@apply flex-1 h-8 bg-slate-200 text-slate-900;
 	}
 	button {
-		color: var(--gray-9);
-		border: 1px solid var(--gray-9);
+		@apply text-slate-50 border-2 border-slate-900 font-bungee;
 	}
-	button:hover,
-	input:hover {
-		opacity: 0.75;
+	.exerciseControls .complete {
+		@apply bg-emerald-400;
 	}
 </style>
